@@ -35,7 +35,15 @@ class SkinBox_t
     GLuint right_;      ///<righg face texture
     GLuint front_;      ///<front face texture
 public:
-    
+    ~SkinBox_t() {
+        glDeleteShader(error_);
+        glDeleteShader(top_);
+        glDeleteShader(bottom_);
+        glDeleteShader(left_);
+        glDeleteShader(back_);
+        glDeleteShader(right_);
+        glDeleteShader(front_);
+    }
     
     GLuint& operator [] (int i) {
         switch (i) {
@@ -63,6 +71,47 @@ public:
         }
     }
 };
+
+//*
+class mouse_t {
+public:
+    
+    mouse_t (sf::RenderWindow* w):
+    window_(w) {
+        windowsize_ = w->getSize();
+        xwindow_ = window_->getPosition().x + window_width/2;//400;
+        ywindow_ = window_->getPosition().y + window_height/2;//300;
+        pos_.x = xwindow_;
+        pos_.y = ywindow_;
+        sf::Mouse::setPosition(pos_);
+        //w->setMouseCursorVisible(false);
+    }
+    ~mouse_t() {}
+    
+    sf::Vector2u windowsize_;
+    
+    sf::RenderWindow* window_;
+    
+    sf::Vector2i pos_;
+    
+    int angle();
+    
+    int xwindow_;
+    int ywindow_;
+    
+    float angleX_ = 0;
+    float angleY_ = 0;
+    float x_ = 0;
+    float y_ = 0;
+    float z_ = 0;
+    
+    bool Left_ = false;
+    bool Right_ = false;
+    
+};
+//*/
+
+
 
 /*!
  \brief loads the specified texture from the file specified in the parameter
