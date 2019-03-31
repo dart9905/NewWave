@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['right_5f',['right_',['../classSkinBox__t.html#af4fe3372619e9a7e49d4495b332dbe8e',1,'SkinBox_t']]]
+  ['globsize',['GLOBsize',['../GraphFile_8hpp.html#a6cbe89efe8c5158fb4a4e99d60075282',1,'GraphFile.hpp']]]
 ];

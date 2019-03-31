@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['top_5f',['top_',['../classSkinBox__t.html#a2660ed9c1a6e662b697ea23a3710248d',1,'SkinBox_t']]]
+  ['skinbox_5ft',['SkinBox_t',['../classSkinBox__t.html',1,'']]],
+  ['speed_5f',['speed_',['../classmouse__t.html#a6bcf637aa4f03937954c7e26c6123c7c',1,'mouse_t']]]
 ];

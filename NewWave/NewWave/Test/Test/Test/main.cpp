@@ -47,7 +47,7 @@ int main(int argc,char **argv)
                     break;
                     
                 case sf::Event::MouseMoved:
-                    // std::cout << “mouse Coord x: " << event.mouseMove.x << " y: " << event.mouseMove.y << std::endl;
+                     std::cout << "mouse Coord x: " << event.mouseMove.x << " y: " << event.mouseMove.y << std::endl;
                     break;
                     
                 case sf::Event::MouseButtonPressed:

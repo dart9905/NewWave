@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a2b760810e5bb0cfb55f0c7d6d74d4438',1,'main.cpp']]],
-  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['maketextures',['MakeTextures',['../GraphFile_8cpp.html#a34a56e8bcfcc3a5a608349dedc23f4b3',1,'MakeTextures(SkinBox_t *arrayBox):&#160;GraphFile.cpp'],['../GraphFile_8hpp.html#a34a56e8bcfcc3a5a608349dedc23f4b3',1,'MakeTextures(SkinBox_t *arrayBox):&#160;GraphFile.cpp']]]
+  ['left_5f',['left_',['../classSkinBox__t.html#a0c5a8370ea6676f59c6d49a68bfa3ce2',1,'SkinBox_t']]],
+  ['loadtexture',['LoadTexture',['../GraphFile_8cpp.html#af52892e1e1e68787f2e3ddd137145e41',1,'LoadTexture(sf::String name):&#160;GraphFile.cpp'],['../GraphFile_8hpp.html#af52892e1e1e68787f2e3ddd137145e41',1,'LoadTexture(sf::String name):&#160;GraphFile.cpp']]]
 ];

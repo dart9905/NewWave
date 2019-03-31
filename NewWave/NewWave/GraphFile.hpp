@@ -76,37 +76,28 @@ public:
 class mouse_t {
 public:
     
-    mouse_t (sf::RenderWindow* w):
-    window_(w) {
-        windowsize_ = w->getSize();
-        xwindow_ = window_->getPosition().x + window_width/2;//400;
-        ywindow_ = window_->getPosition().y + window_height/2;//300;
-        pos_.x = xwindow_;
-        pos_.y = ywindow_;
-        sf::Mouse::setPosition(pos_);
-        //w->setMouseCursorVisible(false);
-    }
+    mouse_t () {}
     ~mouse_t() {}
     
-    sf::Vector2u windowsize_;
-    
-    sf::RenderWindow* window_;
-    
-    sf::Vector2i pos_;
-    
-    int angle();
-    
-    int xwindow_;
-    int ywindow_;
+    sf::Vector2i posnew_;
+    sf::Vector2i posold_;
     
     float angleX_ = 0;
     float angleY_ = 0;
     float x_ = 0;
     float y_ = 0;
-    float z_ = 0;
+    float z_ = 100;
     
-    bool Left_ = false;
-    bool Right_ = false;
+    float dx_ = 0;
+    float dy_ = 0;
+    float dz_ = 0;
+    float speed_ = 5;
+    
+    float R_  = 10;
+    float RR_ = R_ * R_;
+    
+    
+    bool checkbut_ = false;
     
 };
 //*/

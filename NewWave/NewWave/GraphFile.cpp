@@ -151,29 +151,3 @@ void createBox(SkinBox_t& box,float size)
 {
     createRectangle(box, size, size, size);
 }
-
-
-int mouse_t:: angle() {
-    
-    xwindow_ = window_->getPosition().x + window_width/2;//400;
-    ywindow_ = window_->getPosition().y + window_height/2;//300;
-    
-    pos_ = sf::Mouse::getPosition(*window_);
-    
-   // sf::Mouse::
-    
-    
-    angleX_ += (xwindow_ - pos_.x - window_->getPosition().x) / 4;
-    angleY_ += (ywindow_ - pos_.y - window_->getPosition().y) / 4;
-    
-    if (angleY_ < -89.0)
-        angleY_ = -89.0;
-    
-    if (angleY_ > 89.0)
-        angleY_ = 89.0;
-    
-    pos_.x = xwindow_;
-    pos_.y = ywindow_;
-    sf::Mouse::setPosition(pos_);
-    return 0;
-}

@@ -1,8 +1,8 @@
 /*!
  \file
  \authors LordDifine -- Khromov Alexey
- \version A1.1mac
- \date 18.03.2019
+ \version A1.2mac
+ \date 30.03.2019
  \bug no
  
  */
@@ -32,6 +32,7 @@
 
 //Connecting our libraries
 #include "GraphFile.hpp"
+#include "Event.hpp"
 
 //      =============================================
 //      ==                                         ==
@@ -79,12 +80,7 @@ int main(int, char const**)
     
     sf::Clock clock;
     
-    mouse_t Mouse(&window);
-    
-    float dx = 0;
-    float dy = 0;
-    float dz = 0;
-    float speed = 0.1;
+    mouse_t Mouse;
 
     // Start the game loop
     while (window.isOpen())
@@ -94,49 +90,12 @@ int main(int, char const**)
         
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
-        window.clear(sf::Color::White);
+        window.clear(sf::Color::Black);
         
-        float time = clock.getElapsedTime().asMilliseconds() / 2;
+        //float time = clock.getElapsedTime().asMilliseconds() / 2;
         
         // Process events
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            dx = 0;
-            dy = 0;
-            dz = 0;
-            // Close window: exit
-            if (event.type == sf::Event::Closed) {
-                window.close();
-            }
-
-            // Escape pressed: exit
-            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
-                window.close();
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-                dx = -sin (Mouse.angleX_ / 180 * PI) * speed;
-                dy =  tan (Mouse.angleY_ / 180 * PI) * speed;
-                dz = -cos (Mouse.angleX_ / 180 * PI) * speed;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-                dx =  sin (Mouse.angleX_ / 180 * PI) * speed;
-                dy = -tan (Mouse.angleY_ / 180 * PI) * speed;
-                dz =  cos (Mouse.angleX_ / 180 * PI) * speed;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-                dx =  sin ((Mouse.angleX_ + 90) / 180 * PI) * speed;
-                dz =  cos ((Mouse.angleX_ + 90) / 180 * PI) * speed;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-                dx =  sin ((Mouse.angleX_ - 90) / 180 * PI) * speed;
-                dz =  cos ((Mouse.angleX_ - 90) / 180 * PI) * speed;
-            }
-            Mouse.x_+=dx;
-            Mouse.y_+=dy;
-            Mouse.z_+=dz;
-        }
-        
+        EVENT(window, Mouse);
         
         // Draw the sprite
         /*
@@ -148,13 +107,9 @@ int main(int, char const**)
         
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
-        gluLookAt(Mouse.x_, Mouse.y_, Mouse.z_, Mouse.x_ - sin(Mouse.angleX_/180*PI), Mouse.y_ + tan(Mouse.angleY_/180*PI), Mouse.z_ - cos(Mouse.angleX_/180*PI), 0, 1, 0);
-        Mouse.angle();
-        //*
-        // Working with the camera
-        glTranslatef(0, 0, -100);
-        //glRotatef(time, 50, 50, 0);
-        // draw box
+        
+        gluLookAt(Mouse.x_, Mouse.y_, Mouse.z_, 0, 0, 0, 0, 1, 0);
+        
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 glTranslatef(i * GLOBsize, j * GLOBsize, 0);
@@ -162,9 +117,6 @@ int main(int, char const**)
                 glTranslatef(-i * GLOBsize, -j * GLOBsize, 0);
             }
         }
-        //glRotatef(-time, 50, 50, 0);
-        //glTranslatef(0, 0, 100);
-        //*/
 
         // Update the window
         window.display();
