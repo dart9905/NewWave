@@ -1,7 +1,7 @@
 /*!
- \file
+ \file MAIN
  \authors LordDifine -- Khromov Alexey
- \version A1.2mac
+ \version A1.3mac
  \date 30.03.2019
  \bug no
  
@@ -43,6 +43,7 @@
 //      ==                                         ==
 //      =============================================
 
+
 int main(int, char const**)
 {
     
@@ -81,6 +82,9 @@ int main(int, char const**)
     sf::Clock clock;
     
     mouse_t Mouse;
+    
+    sf::RectangleShape line(sf::Vector2f(10,10));
+    
 
     // Start the game loop
     while (window.isOpen())
@@ -110,14 +114,9 @@ int main(int, char const**)
         
         gluLookAt(Mouse.x_, Mouse.y_, Mouse.z_, 0, 0, 0, 0, 1, 0);
         
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                glTranslatef(i * GLOBsize, j * GLOBsize, 0);
-                createBox(arrayBox [0], GLOBsize);
-                glTranslatef(-i * GLOBsize, -j * GLOBsize, 0);
-            }
-        }
-
+        drawhouse(arrayBox);
+        
+         //*/
         // Update the window
         window.display();
     }

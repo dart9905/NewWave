@@ -15,9 +15,10 @@
 #include <stdio.h>
 
 #define GL_CLAMP_TO_EDGE 0x812F
-const float PI = 3.141592653;   ///< Pi - pizdec
-const float GLOBsize = 32.f;    ///< size texture
-const int window_width = 1500;  ///< size window width
+const float PI          = 3.141592653;   ///< Pi - pizdec
+const float GLOBsize    = 32.f;    ///< size texture
+const float GLOBsize2   = 16.f;    ///< size texture / 2
+const int window_width  = 1500;  ///< size window width
 const int window_height = 1200; ///< size window height
 
 
@@ -127,7 +128,7 @@ int MakeTextures(SkinBox_t* arrayBox);
  \param z_size size z
  \return returns void
  */
-void DrawRectangle(SkinBox_t& box,float x_size, float y_size, float z_size);
+void createRectangle(SkinBox_t& box,float x_size, float y_size, float z_size);
 
 /*!
  \brief draws a picture box on the texture of the box using the dimensions specified
@@ -136,5 +137,13 @@ void DrawRectangle(SkinBox_t& box,float x_size, float y_size, float z_size);
  \return returns void
  */
 void createBox(SkinBox_t& box, float size);
+
+
+/*!
+ \brief draw home in 3d
+ \param arrayBox array texture house
+ \return void
+ */
+void drawhouse(SkinBox_t* arrayBox);
 
 #endif /* GraphFile_hpp */

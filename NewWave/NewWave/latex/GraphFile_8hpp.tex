@@ -1,0 +1,210 @@
+\hypertarget{GraphFile_8hpp}{}\section{Graph\+File.\+hpp File Reference}
+\label{GraphFile_8hpp}\index{Graph\+File.\+hpp@{Graph\+File.\+hpp}}
+{\ttfamily \#include $<$S\+F\+M\+L/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include $<$S\+F\+M\+L/\+Open\+G\+L.\+hpp$>$}\newline
+{\ttfamily \#include $<$G\+L\+U\+T/\+G\+L\+U\+T.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmouse__t}{mouse\+\_\+t}
+\item 
+class \hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t}
+\begin{DoxyCompactList}\small\item\em a skin type that stores textures on all faces of a cube this class stores the textures, which will later be superimposed on the volume, you can do it through \mbox{[}\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{GraphFile_8hpp_ae90f81f48642444b4ba7fa5cacf40569}{G\+L\+\_\+\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE}~0x812F
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{GraphFile_8hpp_ab6b255a68a14519e4c39c0e9fc685fd1}{create\+Box} (\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} \&box, float size)
+\begin{DoxyCompactList}\small\item\em draws a picture box on the texture of the box using the dimensions specified \end{DoxyCompactList}\item 
+void \hyperlink{GraphFile_8hpp_ad13eed1328cfc8c0c7416f40e1c281e9}{create\+Rectangle} (\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} \&box, float x\+\_\+size, float y\+\_\+size, float z\+\_\+size)
+\begin{DoxyCompactList}\small\item\em draws a picture box on the texture of the box using the dimensions specified \end{DoxyCompactList}\item 
+void \hyperlink{GraphFile_8hpp_a75407d74c8144f46fcb61d34d00f89f2}{drawhouse} (\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} $\ast$array\+Box)
+\begin{DoxyCompactList}\small\item\em draw home in 3d \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{GraphFile_8hpp_af52892e1e1e68787f2e3ddd137145e41}{Load\+Texture} (sf\+::\+String name)
+\begin{DoxyCompactList}\small\item\em loads the specified texture from the file specified in the parameter \end{DoxyCompactList}\item 
+int \hyperlink{GraphFile_8hpp_a34a56e8bcfcc3a5a608349dedc23f4b3}{Make\+Textures} (\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} $\ast$array\+Box)
+\begin{DoxyCompactList}\small\item\em a function to initialize an array of (different) textures \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const float \hyperlink{GraphFile_8hpp_a6cbe89efe8c5158fb4a4e99d60075282}{G\+L\+O\+Bsize} = 32.f
+\begin{DoxyCompactList}\small\item\em size texture \end{DoxyCompactList}\item 
+const float \hyperlink{GraphFile_8hpp_aae153df7875cdede571221ace3ce9b4f}{G\+L\+O\+Bsize2} = 16.f
+\begin{DoxyCompactList}\small\item\em size texture / 2 \end{DoxyCompactList}\item 
+const float \hyperlink{GraphFile_8hpp_aa08a577393243b86dfd2a97e61443673}{PI} = 3.\+141592653
+\begin{DoxyCompactList}\small\item\em Pi -\/ pizdec. \end{DoxyCompactList}\item 
+const int \hyperlink{GraphFile_8hpp_a7be74e799254792ccf1dddce8c4cd0cb}{window\+\_\+height} = 1200
+\begin{DoxyCompactList}\small\item\em size window height \end{DoxyCompactList}\item 
+const int \hyperlink{GraphFile_8hpp_a39a2fe953af0d179b5a76a26458ce57e}{window\+\_\+width} = 1500
+\begin{DoxyCompactList}\small\item\em size window width \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{GraphFile_8hpp_ae90f81f48642444b4ba7fa5cacf40569}\label{GraphFile_8hpp_ae90f81f48642444b4ba7fa5cacf40569}} 
+\index{Graph\+File.\+hpp@{Graph\+File.\+hpp}!G\+L\+\_\+\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE@{G\+L\+\_\+\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE}}
+\index{G\+L\+\_\+\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE@{G\+L\+\_\+\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE}!Graph\+File.\+hpp@{Graph\+File.\+hpp}}
+\subsubsection{\texorpdfstring{G\+L\+\_\+\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE}{GL\_CLAMP\_TO\_EDGE}}
+{\footnotesize\ttfamily \#define G\+L\+\_\+\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE~0x812F}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{GraphFile_8hpp_ab6b255a68a14519e4c39c0e9fc685fd1}\label{GraphFile_8hpp_ab6b255a68a14519e4c39c0e9fc685fd1}} 
+\index{Graph\+File.\+hpp@{Graph\+File.\+hpp}!create\+Box@{create\+Box}}
+\index{create\+Box@{create\+Box}!Graph\+File.\+hpp@{Graph\+File.\+hpp}}
+\subsubsection{\texorpdfstring{create\+Box()}{createBox()}}
+{\footnotesize\ttfamily void create\+Box (\begin{DoxyParamCaption}\item[{\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} \&}]{box,  }\item[{float}]{size }\end{DoxyParamCaption})}
+
+
+
+draws a picture box on the texture of the box using the dimensions specified 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box} & variable to store the texture block. \\
+\hline
+{\em size} & size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{GraphFile_8hpp_ad13eed1328cfc8c0c7416f40e1c281e9}\label{GraphFile_8hpp_ad13eed1328cfc8c0c7416f40e1c281e9}} 
+\index{Graph\+File.\+hpp@{Graph\+File.\+hpp}!create\+Rectangle@{create\+Rectangle}}
+\index{create\+Rectangle@{create\+Rectangle}!Graph\+File.\+hpp@{Graph\+File.\+hpp}}
+\subsubsection{\texorpdfstring{create\+Rectangle()}{createRectangle()}}
+{\footnotesize\ttfamily void create\+Rectangle (\begin{DoxyParamCaption}\item[{\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} \&}]{box,  }\item[{float}]{x\+\_\+size,  }\item[{float}]{y\+\_\+size,  }\item[{float}]{z\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+draws a picture box on the texture of the box using the dimensions specified 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box} & variable to store the texture block. \\
+\hline
+{\em x\+\_\+size} & size x \\
+\hline
+{\em y\+\_\+size} & size y \\
+\hline
+{\em z\+\_\+size} & size z \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{GraphFile_8hpp_a75407d74c8144f46fcb61d34d00f89f2}\label{GraphFile_8hpp_a75407d74c8144f46fcb61d34d00f89f2}} 
+\index{Graph\+File.\+hpp@{Graph\+File.\+hpp}!drawhouse@{drawhouse}}
+\index{drawhouse@{drawhouse}!Graph\+File.\+hpp@{Graph\+File.\+hpp}}
+\subsubsection{\texorpdfstring{drawhouse()}{drawhouse()}}
+{\footnotesize\ttfamily void drawhouse (\begin{DoxyParamCaption}\item[{\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} $\ast$}]{array\+Box }\end{DoxyParamCaption})}
+
+
+
+draw home in 3d 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Box} & array texture house \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{GraphFile_8hpp_af52892e1e1e68787f2e3ddd137145e41}\label{GraphFile_8hpp_af52892e1e1e68787f2e3ddd137145e41}} 
+\index{Graph\+File.\+hpp@{Graph\+File.\+hpp}!Load\+Texture@{Load\+Texture}}
+\index{Load\+Texture@{Load\+Texture}!Graph\+File.\+hpp@{Graph\+File.\+hpp}}
+\subsubsection{\texorpdfstring{Load\+Texture()}{LoadTexture()}}
+{\footnotesize\ttfamily G\+Luint Load\+Texture (\begin{DoxyParamCaption}\item[{sf\+::\+String}]{name }\end{DoxyParamCaption})}
+
+
+
+loads the specified texture from the file specified in the parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & string with the address to the loaded texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a texture of type G\+Luint 
+\end{DoxyReturn}
+\mbox{\Hypertarget{GraphFile_8hpp_a34a56e8bcfcc3a5a608349dedc23f4b3}\label{GraphFile_8hpp_a34a56e8bcfcc3a5a608349dedc23f4b3}} 
+\index{Graph\+File.\+hpp@{Graph\+File.\+hpp}!Make\+Textures@{Make\+Textures}}
+\index{Make\+Textures@{Make\+Textures}!Graph\+File.\+hpp@{Graph\+File.\+hpp}}
+\subsubsection{\texorpdfstring{Make\+Textures()}{MakeTextures()}}
+{\footnotesize\ttfamily int Make\+Textures (\begin{DoxyParamCaption}\item[{\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} $\ast$}]{array\+Box }\end{DoxyParamCaption})}
+
+
+
+a function to initialize an array of (different) textures 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Box} & a pointer to the texture array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns 0 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+the function does not control the size of the array, you should manually update the function. 
+\end{DoxyWarning}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{GraphFile_8hpp_a6cbe89efe8c5158fb4a4e99d60075282}\label{GraphFile_8hpp_a6cbe89efe8c5158fb4a4e99d60075282}} 
+\index{Graph\+File.\+hpp@{Graph\+File.\+hpp}!G\+L\+O\+Bsize@{G\+L\+O\+Bsize}}
+\index{G\+L\+O\+Bsize@{G\+L\+O\+Bsize}!Graph\+File.\+hpp@{Graph\+File.\+hpp}}
+\subsubsection{\texorpdfstring{G\+L\+O\+Bsize}{GLOBsize}}
+{\footnotesize\ttfamily const float G\+L\+O\+Bsize = 32.f}
+
+
+
+size texture 
+
+\mbox{\Hypertarget{GraphFile_8hpp_aae153df7875cdede571221ace3ce9b4f}\label{GraphFile_8hpp_aae153df7875cdede571221ace3ce9b4f}} 
+\index{Graph\+File.\+hpp@{Graph\+File.\+hpp}!G\+L\+O\+Bsize2@{G\+L\+O\+Bsize2}}
+\index{G\+L\+O\+Bsize2@{G\+L\+O\+Bsize2}!Graph\+File.\+hpp@{Graph\+File.\+hpp}}
+\subsubsection{\texorpdfstring{G\+L\+O\+Bsize2}{GLOBsize2}}
+{\footnotesize\ttfamily const float G\+L\+O\+Bsize2 = 16.f}
+
+
+
+size texture / 2 
+
+\mbox{\Hypertarget{GraphFile_8hpp_aa08a577393243b86dfd2a97e61443673}\label{GraphFile_8hpp_aa08a577393243b86dfd2a97e61443673}} 
+\index{Graph\+File.\+hpp@{Graph\+File.\+hpp}!PI@{PI}}
+\index{PI@{PI}!Graph\+File.\+hpp@{Graph\+File.\+hpp}}
+\subsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily const float PI = 3.\+141592653}
+
+
+
+Pi -\/ pizdec. 
+
+\mbox{\Hypertarget{GraphFile_8hpp_a7be74e799254792ccf1dddce8c4cd0cb}\label{GraphFile_8hpp_a7be74e799254792ccf1dddce8c4cd0cb}} 
+\index{Graph\+File.\+hpp@{Graph\+File.\+hpp}!window\+\_\+height@{window\+\_\+height}}
+\index{window\+\_\+height@{window\+\_\+height}!Graph\+File.\+hpp@{Graph\+File.\+hpp}}
+\subsubsection{\texorpdfstring{window\+\_\+height}{window\_height}}
+{\footnotesize\ttfamily const int window\+\_\+height = 1200}
+
+
+
+size window height 
+
+\mbox{\Hypertarget{GraphFile_8hpp_a39a2fe953af0d179b5a76a26458ce57e}\label{GraphFile_8hpp_a39a2fe953af0d179b5a76a26458ce57e}} 
+\index{Graph\+File.\+hpp@{Graph\+File.\+hpp}!window\+\_\+width@{window\+\_\+width}}
+\index{window\+\_\+width@{window\+\_\+width}!Graph\+File.\+hpp@{Graph\+File.\+hpp}}
+\subsubsection{\texorpdfstring{window\+\_\+width}{window\_width}}
+{\footnotesize\ttfamily const int window\+\_\+width = 1500}
+
+
+
+size window width 
+

@@ -101,18 +101,20 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
                         mouse.angleY_ = -89;
                     }
                     
-                    mouse.x_=  mouse.R_ * sin(mouse.angleX_ / 180 * PI) - mouse.R_ * (1 - cos(mouse.angleY_ / 180 * PI)) * cos((90 - mouse.angleX_) / 180 * PI);
+                    
+                    mouse.x_=  mouse.R_ * sin(mouse.angleX_ / 180 * PI) * cos(mouse.angleY_ / 180 * PI);
                     
                     mouse.y_= -mouse.R_ * sin(mouse.angleY_ / 180 * PI);
                     
-                    float D = 1 - sin(mouse.angleX_/180*PI) * sin(mouse.angleX_/180*PI) - sin(mouse.angleY_/180*PI) * sin(mouse.angleY_/180*PI);
-                    if (D < 0)
+                    float D = mouse.RR_ - mouse.x_ * mouse.x_ - mouse.y_ * mouse.y_;
+                    if (D < 0) {
                         D = 0;
+                    }
                     
                     if ((mouse.angleX_ < 90) && (mouse.angleX_ > -90)) {
-                        mouse.z_ = sqrt(D) * mouse.R_;
+                        mouse.z_ = sqrt(D);
                     } else {
-                        mouse.z_ = -sqrt(D) * mouse.R_;
+                        mouse.z_ = -sqrt(D);
                     }
                     mouse.posold_ = mouse.posnew_;
                     

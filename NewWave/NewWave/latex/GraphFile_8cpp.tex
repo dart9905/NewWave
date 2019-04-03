@@ -1,0 +1,124 @@
+\hypertarget{GraphFile_8cpp}{}\section{Graph\+File.\+cpp File Reference}
+\label{GraphFile_8cpp}\index{Graph\+File.\+cpp@{Graph\+File.\+cpp}}
+{\ttfamily \#include \char`\"{}Graph\+File.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$S\+F\+M\+L/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include $<$S\+F\+M\+L/\+Open\+G\+L.\+hpp$>$}\newline
+{\ttfamily \#include $<$G\+L\+U\+T/\+G\+L\+U\+T.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Resource\+Path.\+hpp\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{GraphFile_8cpp_ab6b255a68a14519e4c39c0e9fc685fd1}{create\+Box} (\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} \&box, float size)
+\begin{DoxyCompactList}\small\item\em draws a picture box on the texture of the box using the dimensions specified \end{DoxyCompactList}\item 
+void \hyperlink{GraphFile_8cpp_ad13eed1328cfc8c0c7416f40e1c281e9}{create\+Rectangle} (\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} \&box, float x\+\_\+size, float y\+\_\+size, float z\+\_\+size)
+\begin{DoxyCompactList}\small\item\em draws a picture box on the texture of the box using the dimensions specified \end{DoxyCompactList}\item 
+void \hyperlink{GraphFile_8cpp_a75407d74c8144f46fcb61d34d00f89f2}{drawhouse} (\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} $\ast$array\+Box)
+\begin{DoxyCompactList}\small\item\em draw home in 3d \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{GraphFile_8cpp_af52892e1e1e68787f2e3ddd137145e41}{Load\+Texture} (sf\+::\+String name)
+\begin{DoxyCompactList}\small\item\em loads the specified texture from the file specified in the parameter \end{DoxyCompactList}\item 
+int \hyperlink{GraphFile_8cpp_a34a56e8bcfcc3a5a608349dedc23f4b3}{Make\+Textures} (\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} $\ast$array\+Box)
+\begin{DoxyCompactList}\small\item\em a function to initialize an array of (different) textures \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{GraphFile_8cpp_ab6b255a68a14519e4c39c0e9fc685fd1}\label{GraphFile_8cpp_ab6b255a68a14519e4c39c0e9fc685fd1}} 
+\index{Graph\+File.\+cpp@{Graph\+File.\+cpp}!create\+Box@{create\+Box}}
+\index{create\+Box@{create\+Box}!Graph\+File.\+cpp@{Graph\+File.\+cpp}}
+\subsubsection{\texorpdfstring{create\+Box()}{createBox()}}
+{\footnotesize\ttfamily void create\+Box (\begin{DoxyParamCaption}\item[{\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} \&}]{box,  }\item[{float}]{size }\end{DoxyParamCaption})}
+
+
+
+draws a picture box on the texture of the box using the dimensions specified 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box} & variable to store the texture block. \\
+\hline
+{\em size} & size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{GraphFile_8cpp_ad13eed1328cfc8c0c7416f40e1c281e9}\label{GraphFile_8cpp_ad13eed1328cfc8c0c7416f40e1c281e9}} 
+\index{Graph\+File.\+cpp@{Graph\+File.\+cpp}!create\+Rectangle@{create\+Rectangle}}
+\index{create\+Rectangle@{create\+Rectangle}!Graph\+File.\+cpp@{Graph\+File.\+cpp}}
+\subsubsection{\texorpdfstring{create\+Rectangle()}{createRectangle()}}
+{\footnotesize\ttfamily void create\+Rectangle (\begin{DoxyParamCaption}\item[{\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} \&}]{box,  }\item[{float}]{x\+\_\+size,  }\item[{float}]{y\+\_\+size,  }\item[{float}]{z\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+draws a picture box on the texture of the box using the dimensions specified 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box} & variable to store the texture block. \\
+\hline
+{\em x\+\_\+size} & size x \\
+\hline
+{\em y\+\_\+size} & size y \\
+\hline
+{\em z\+\_\+size} & size z \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{GraphFile_8cpp_a75407d74c8144f46fcb61d34d00f89f2}\label{GraphFile_8cpp_a75407d74c8144f46fcb61d34d00f89f2}} 
+\index{Graph\+File.\+cpp@{Graph\+File.\+cpp}!drawhouse@{drawhouse}}
+\index{drawhouse@{drawhouse}!Graph\+File.\+cpp@{Graph\+File.\+cpp}}
+\subsubsection{\texorpdfstring{drawhouse()}{drawhouse()}}
+{\footnotesize\ttfamily void drawhouse (\begin{DoxyParamCaption}\item[{\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} $\ast$}]{array\+Box }\end{DoxyParamCaption})}
+
+
+
+draw home in 3d 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Box} & array texture house \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{GraphFile_8cpp_af52892e1e1e68787f2e3ddd137145e41}\label{GraphFile_8cpp_af52892e1e1e68787f2e3ddd137145e41}} 
+\index{Graph\+File.\+cpp@{Graph\+File.\+cpp}!Load\+Texture@{Load\+Texture}}
+\index{Load\+Texture@{Load\+Texture}!Graph\+File.\+cpp@{Graph\+File.\+cpp}}
+\subsubsection{\texorpdfstring{Load\+Texture()}{LoadTexture()}}
+{\footnotesize\ttfamily G\+Luint Load\+Texture (\begin{DoxyParamCaption}\item[{sf\+::\+String}]{name }\end{DoxyParamCaption})}
+
+
+
+loads the specified texture from the file specified in the parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & string with the address to the loaded texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a texture of type G\+Luint 
+\end{DoxyReturn}
+\mbox{\Hypertarget{GraphFile_8cpp_a34a56e8bcfcc3a5a608349dedc23f4b3}\label{GraphFile_8cpp_a34a56e8bcfcc3a5a608349dedc23f4b3}} 
+\index{Graph\+File.\+cpp@{Graph\+File.\+cpp}!Make\+Textures@{Make\+Textures}}
+\index{Make\+Textures@{Make\+Textures}!Graph\+File.\+cpp@{Graph\+File.\+cpp}}
+\subsubsection{\texorpdfstring{Make\+Textures()}{MakeTextures()}}
+{\footnotesize\ttfamily int Make\+Textures (\begin{DoxyParamCaption}\item[{\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} $\ast$}]{array\+Box }\end{DoxyParamCaption})}
+
+
+
+a function to initialize an array of (different) textures 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Box} & a pointer to the texture array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns 0 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+the function does not control the size of the array, you should manually update the function. 
+\end{DoxyWarning}
