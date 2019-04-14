@@ -136,7 +136,7 @@ void createRectangle(SkinBox_t& box,float x_size, float y_size, float z_size)
     
     glBindTexture(GL_TEXTURE_2D, box [5]);
     glBegin(GL_QUADS);
-    glColor3f(1, 0, 0);
+    //glColor3f(1, 0, 0);
     //bottom
     glTexCoord2f(0, 0);     glVertex3f(-x_size, -y_size,  z_size);
     glTexCoord2f(1, 0);     glVertex3f( x_size, -y_size,  z_size);

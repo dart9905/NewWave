@@ -15,6 +15,7 @@
 #include <stdio.h>
 
 #define GL_CLAMP_TO_EDGE 0x812F
+
 const float PI          = 3.141592653;   ///< Pi - pizdec
 const float GLOBsize    = 32.f;    ///< size texture
 const float GLOBsize2   = 16.f;    ///< size texture / 2

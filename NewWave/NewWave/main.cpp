@@ -82,9 +82,8 @@ int main(int, char const**)
     sf::Clock clock;
     
     mouse_t Mouse;
-    
-    sf::RectangleShape line(sf::Vector2f(10,10));
-    
+    int window_width_view = (window.getSize()).x;
+    int window_height_view = (window.getSize()).y;
 
     // Start the game loop
     while (window.isOpen())
@@ -103,7 +102,7 @@ int main(int, char const**)
         
         // Draw the sprite
         /*
-        sprite.setScale((window.getSize()).x / (texture.getSize()).x, (window.getSize()).y / (texture.getSize()).y);
+        //sprite.setScale((window.getSize()).x / (texture.getSize()).x, (window.getSize()).y / (texture.getSize()).y);
         window.pushGLStates();
         window.draw(sprite);
         window.popGLStates();
@@ -111,10 +110,13 @@ int main(int, char const**)
         
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
-        
+        glViewport ( (window.getSize()).x / 2 - window_width_view / 2 , (window.getSize()).y / 2 - window_height_view / 2 , window_width_view, window_height_view);// , ) ;
         gluLookAt(Mouse.x_, Mouse.y_, Mouse.z_, 0, 0, 0, 0, 1, 0);
         
+        
         drawhouse(arrayBox);
+        
+        
         
          //*/
         // Update the window
