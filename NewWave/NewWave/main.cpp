@@ -31,7 +31,7 @@
 
 
 //Connecting our libraries
-#include "GraphFile.hpp"
+//#include "GraphFile.hpp"
 #include "Event.hpp"
 
 //      =============================================
@@ -110,7 +110,7 @@ int main(int, char const**)
         
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
-        glViewport ( (window.getSize()).x / 2 - window_width_view / 2 , (window.getSize()).y / 2 - window_height_view / 2 , window_width_view, window_height_view);// , ) ;
+        glViewport ( (window.getSize()).x / 2 - window_width_view / 2 , (window.getSize()).y / 2 - window_height_view / 2 , window_width_view, window_height_view);
         gluLookAt(Mouse.x_, Mouse.y_, Mouse.z_, 0, 0, 0, 0, 1, 0);
         
         
@@ -118,7 +118,7 @@ int main(int, char const**)
         
         
         
-         //*/
+        //*/
         // Update the window
         window.display();
     }

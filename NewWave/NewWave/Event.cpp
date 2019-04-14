@@ -10,21 +10,32 @@
 
 
 int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
-    mouse.dx_ /= 10;
-    mouse.dy_ /= 10;
-    mouse.dz_ /= 10;
-    if (mouse.dx_ * mouse.dx_ < mouse.dx_) {
-        mouse.dx_ = 0;
-    }
-    if (mouse.dy_ * mouse.dy_ < mouse.dy_) {
-        mouse.dy_ = 0;
-    }
-    if (mouse.dz_ * mouse.dz_ < mouse.dz_) {
-        mouse.dz_ = 0;
-    }
     sf::Event event;
-    while (window.pollEvent(event))
-    {
+    
+    mouse.dx_ = mouse.dx_ / 100 * 60;
+    mouse.dy_ = mouse.dy_ / 100 * 60;
+    mouse.dz_ = mouse.dz_ / 100 * 60;
+    if (mouse.dx_ * mouse.dx_ < 1)
+        mouse.dx_ = 0;
+        
+    if (mouse.dy_ * mouse.dy_ < 1)
+        mouse.dy_ = 0;
+        
+    if (mouse.dz_ * mouse.dz_ < 1)
+        mouse.dz_ = 0;
+    
+    
+    //*
+    //for (; exit && (mouse.dx_ == 0) && (mouse.dy_ == 0) && (mouse.dz_ == 0);) {
+    bool exit = window.pollEvent(event);
+    if (!exit && (mouse.dx_ == 0) && (mouse.dy_ == 0) && (mouse.dz_ == 0)) {
+        while (!exit) {
+            usleep(5000);
+            printf("sleep\n");
+            exit = window.pollEvent(event);
+        }
+    }
+    while (exit) {
         switch (event.type)
         {
             case sf::Event::Closed:
@@ -54,16 +65,15 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
             case sf::Event::MouseWheelMoved:
                 //*
                 if(event.mouseWheel.delta==1) {
-                    mouse.dx_ = -sin (mouse.angleX_ / 180 * PI) * mouse.speed_;
-                    mouse.dy_ =  tan (mouse.angleY_ / 180 * PI) * mouse.speed_;
-                    mouse.dz_ = -cos (mouse.angleX_ / 180 * PI) * mouse.speed_;
+                    mouse.dx_ = -sin (mouse.angleX_ / 180 * PI) * mouse.speed_ + mouse.dx_  / 5;
+                    mouse.dy_ =  tan (mouse.angleY_ / 180 * PI) * mouse.speed_ + mouse.dy_  / 5;
+                    mouse.dz_ = -cos (mouse.angleX_ / 180 * PI) * mouse.speed_ + mouse.dz_  / 5;
                 }
                 else if(event.mouseWheel.delta==-1) {
-                    mouse.dx_ =  sin (mouse.angleX_ / 180 * PI) * mouse.speed_;
-                    mouse.dy_ = -tan (mouse.angleY_ / 180 * PI) * mouse.speed_;
-                    mouse.dz_ =  cos (mouse.angleX_ / 180 * PI) * mouse.speed_;
+                    mouse.dx_ +=  sin (mouse.angleX_ / 180 * PI) * mouse.speed_;
+                    mouse.dy_ += -tan (mouse.angleY_ / 180 * PI) * mouse.speed_;
+                    mouse.dz_ +=  cos (mouse.angleX_ / 180 * PI) * mouse.speed_;
                 }
-                //*/
                 break;
             case sf::Event::MouseWheelScrolled:
                 break;
@@ -156,7 +166,17 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
             case sf::Event::Count:
                 
                 break;
+                
+            default:
+                
+                break;
+                
         }
+        exit = window.pollEvent(event);
+    }
+    //*/
+    if (mouse.dx_ != 0 || mouse.dy_ != 0 || mouse.dz_ != 0) {
+        
         if ((mouse.x_ + mouse.dx_) * (mouse.x_ + mouse.dx_) + (mouse.y_ + mouse.dy_) * (mouse.y_ + mouse.dy_) + (mouse.z_ + mouse.dz_) * (mouse.z_ + mouse.dz_) < 10) {
             mouse.dx_ = 0;
             mouse.dy_ = 0;
@@ -169,15 +189,13 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
             mouse.dz_ = 0;
         }
         
-        if (mouse.dx_ != 0 || mouse.dy_ != 0 || mouse.dz_ != 0) {
-            mouse.x_ += mouse.dx_;
-            mouse.y_ += mouse.dy_;
-            mouse.z_ += mouse.dz_;
-            
-            mouse.RR_ = mouse.x_ * mouse.x_ + mouse.z_ * mouse.z_ + mouse.y_ * mouse.y_;
-            mouse.R_ = sqrt(mouse.RR_);
-        }
+        mouse.x_ += mouse.dx_;
+        mouse.y_ += mouse.dy_;
+        mouse.z_ += mouse.dz_;
+        
+        mouse.RR_ = mouse.x_ * mouse.x_ + mouse.z_ * mouse.z_ + mouse.y_ * mouse.y_;
+        mouse.R_ = sqrt(mouse.RR_);
     }
-    
+    printf("no sleep\n");
     return 0;
 }

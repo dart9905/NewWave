@@ -93,7 +93,7 @@ public:
     float dx_ = 0;
     float dy_ = 0;
     float dz_ = 0;
-    float speed_ = 5;
+    float speed_ = 10;
     
     float R_  = 10;
     float RR_ = R_ * R_;
