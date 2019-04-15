@@ -25,13 +25,11 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
         mouse.dz_ = 0;
     
     
-    //*
-    //for (; exit && (mouse.dx_ == 0) && (mouse.dy_ == 0) && (mouse.dz_ == 0);) {
     bool exit = window.pollEvent(event);
     if (!exit && (mouse.dx_ == 0) && (mouse.dy_ == 0) && (mouse.dz_ == 0)) {
         while (!exit) {
             usleep(5000);
-            printf("sleep\n");
+            //printf("sleep\n");
             exit = window.pollEvent(event);
         }
     }
@@ -177,13 +175,13 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
     //*/
     if (mouse.dx_ != 0 || mouse.dy_ != 0 || mouse.dz_ != 0) {
         
-        if ((mouse.x_ + mouse.dx_) * (mouse.x_ + mouse.dx_) + (mouse.y_ + mouse.dy_) * (mouse.y_ + mouse.dy_) + (mouse.z_ + mouse.dz_) * (mouse.z_ + mouse.dz_) < 10) {
+        if ((mouse.x_ + mouse.dx_) * (mouse.x_ + mouse.dx_) + (mouse.y_ + mouse.dy_) * (mouse.y_ + mouse.dy_) + (mouse.z_ + mouse.dz_) * (mouse.z_ + mouse.dz_) < 100) {
             mouse.dx_ = 0;
             mouse.dy_ = 0;
             mouse.dz_ = 0;
         }
         
-        if ((mouse.x_ + mouse.dx_) * (mouse.x_ + mouse.dx_) + (mouse.y_ + mouse.dy_) * (mouse.y_ + mouse.dy_) + (mouse.z_ + mouse.dz_) * (mouse.z_ + mouse.dz_) > 1000000) {
+        if ((mouse.x_ + mouse.dx_) * (mouse.x_ + mouse.dx_) + (mouse.y_ + mouse.dy_) * (mouse.y_ + mouse.dy_) + (mouse.z_ + mouse.dz_) * (mouse.z_ + mouse.dz_) > 2000000) {
             mouse.dx_ = 0;
             mouse.dy_ = 0;
             mouse.dz_ = 0;
@@ -196,6 +194,6 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
         mouse.RR_ = mouse.x_ * mouse.x_ + mouse.z_ * mouse.z_ + mouse.y_ * mouse.y_;
         mouse.R_ = sqrt(mouse.RR_);
     }
-    printf("no sleep\n");
+    //printf("no sleep\n");
     return 0;
 }

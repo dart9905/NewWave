@@ -13,14 +13,15 @@
 #include <SFML/OpenGL.hpp>
 #include <GLUT/GLUT.h>
 #include <stdio.h>
+#include <math.h>
 
 #define GL_CLAMP_TO_EDGE 0x812F
 
 const float PI          = 3.141592653;   ///< Pi - pizdec
-const float GLOBsize    = 32.f;    ///< size texture
-const float GLOBsize2   = 16.f;    ///< size texture / 2
-const int window_width  = 1500;  ///< size window width
-const int window_height = 1200; ///< size window height
+const float GLOBsize    = 8.f;    ///< size texture
+const float GLOBsize2   = 4.f;    ///< size texture / 2
+const int window_width  = 2560;  ///< size window width
+const int window_height = 1800; ///< size window height
 
 
 /*!
@@ -79,6 +80,41 @@ class mouse_t {
 public:
     
     mouse_t () {}
+    mouse_t (float angleX, float angleY, float z): angleX_(angleX), angleY_(angleY), z_(z)
+    {
+        
+        if (angleX_ > 180) {
+            angleX_ -= 360;
+        }
+        
+        if (angleX_ < -180) {
+            angleX_ += 360;
+        }
+        
+        if (angleY_ > 89) {
+            angleY_ = 89;
+        }
+        
+        if (angleY_ < -89) {
+            angleY_ = -89;
+        }
+        
+        
+        x_=  R_ * sin(angleX_ / 180 * PI) * cos(angleY_ / 180 * PI);
+        
+        y_= -R_ * sin(angleY_ / 180 * PI);
+        
+        float D = RR_ - x_ * x_ - y_ * y_;
+        if (D < 0) {
+            D = 0;
+        }
+        
+        if ((angleX_ < 90) && (angleX_ > -90)) {
+            z_ = sqrt(D);
+        } else {
+            z_ = -sqrt(D);
+        }
+    }
     ~mouse_t() {}
     
     sf::Vector2i posnew_;
@@ -88,15 +124,15 @@ public:
     float angleY_ = 0;
     float x_ = 0;
     float y_ = 0;
-    float z_ = 100;
+    float z_ = 200;
     
     float dx_ = 0;
     float dy_ = 0;
     float dz_ = 0;
     float speed_ = 10;
     
-    float R_  = 10;
-    float RR_ = R_ * R_;
+    float RR_ = x_ * x_ + z_ * z_ + y_ * y_;
+    float R_  = sqrt(RR_);
     
     
     bool checkbut_ = false;

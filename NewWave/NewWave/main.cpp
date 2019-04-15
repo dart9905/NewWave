@@ -56,7 +56,7 @@ int main(int, char const**)
     settings.antialiasingLevel = 4;
     settings.majorVersion = 2;
     settings.minorVersion = 1;
-    sf::RenderWindow window(sf::VideoMode(window_width, window_height), "NewWave", sf::Style::Default, settings);
+    sf::RenderWindow window(sf::VideoMode(window_width / 2, window_height / 2), "NewWave", sf::Style::Default, settings);
     window.setVerticalSyncEnabled(true);
     
     
@@ -81,9 +81,7 @@ int main(int, char const**)
     
     sf::Clock clock;
     
-    mouse_t Mouse;
-    int window_width_view = (window.getSize()).x;
-    int window_height_view = (window.getSize()).y;
+    mouse_t Mouse(-45, -45, 200);
 
     // Start the game loop
     while (window.isOpen())
@@ -110,7 +108,7 @@ int main(int, char const**)
         
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
-        glViewport ( (window.getSize()).x / 2 - window_width_view / 2 , (window.getSize()).y / 2 - window_height_view / 2 , window_width_view, window_height_view);
+        glViewport ( (window.getSize()).x / 2 - window_width / 2 , (window.getSize()).y / 2 - window_height / 2 , window_width, window_height);
         gluLookAt(Mouse.x_, Mouse.y_, Mouse.z_, 0, 0, 0, 0, 1, 0);
         
         
