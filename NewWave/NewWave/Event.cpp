@@ -9,7 +9,8 @@
 #include "Event.hpp"
 
 
-int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
+int EVENT (sf::RenderWindow& window, mouse_t& mouse, Bar& Bar, sf::View& view)
+{
     sf::Event event;
     
     mouse.dx_ = mouse.dx_ / 100 * 60;
@@ -26,21 +27,26 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
     
     
     bool exit = window.pollEvent(event);
-    if (!exit && (mouse.dx_ == 0) && (mouse.dy_ == 0) && (mouse.dz_ == 0)) {
-        while (!exit) {
+    if (!exit && (mouse.dx_ == 0) && (mouse.dy_ == 0) && (mouse.dz_ == 0))
+    {
+        while (!exit)
+        {
             usleep(5000);
             //printf("sleep\n");
             exit = window.pollEvent(event);
         }
     }
-    while (exit) {
+    while (exit)
+    {
         switch (event.type)
         {
             case sf::Event::Closed:
                 window.close();
                 break;
             case sf::Event::Resized:
-                
+                view.reset(sf::FloatRect(0, 0, (window.getSize()).x, (window.getSize()).y));
+                window.setView(view);
+                Bar.setheight((window.getSize()).y);
                 break;
             case sf::Event::LostFocus:
                 
@@ -53,7 +59,8 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
                 break;
             case sf::Event::KeyPressed:
                 // Escape pressed: exit
-                if (event.key.code == sf::Keyboard::Escape) {
+                if (event.key.code == sf::Keyboard::Escape)
+                {
                     window.close();
                 }
                 break;
@@ -62,12 +69,14 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
                 break;
             case sf::Event::MouseWheelMoved:
                 //*
-                if(event.mouseWheel.delta==1) {
+                if(event.mouseWheel.delta==1)
+                {
                     mouse.dx_ = -sin (mouse.angleX_ / 180 * PI) * mouse.speed_ + mouse.dx_  / 5;
                     mouse.dy_ =  tan (mouse.angleY_ / 180 * PI) * mouse.speed_ + mouse.dy_  / 5;
                     mouse.dz_ = -cos (mouse.angleX_ / 180 * PI) * mouse.speed_ + mouse.dz_  / 5;
                 }
-                else if(event.mouseWheel.delta==-1) {
+                else if(event.mouseWheel.delta==-1)
+                {
                     mouse.dx_ +=  sin (mouse.angleX_ / 180 * PI) * mouse.speed_;
                     mouse.dy_ += -tan (mouse.angleY_ / 180 * PI) * mouse.speed_;
                     mouse.dz_ +=  cos (mouse.angleX_ / 180 * PI) * mouse.speed_;
@@ -86,26 +95,31 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
                 mouse.checkbut_ = false;
                 break;
             case sf::Event::MouseMoved:
-                if (mouse.checkbut_) {
+                if (mouse.checkbut_)
+                {
                     mouse.posnew_ = sf::Mouse::getPosition(window);
                     //*
                     mouse.angleX_ -= (mouse.posnew_.x - mouse.posold_.x) / 4;
                     mouse.angleY_ -= (mouse.posnew_.y - mouse.posold_.y) / 4;
                     //*/
                     
-                    if (mouse.angleX_ > 180) {
+                    if (mouse.angleX_ > 180)
+                    {
                         mouse.angleX_ -= 360;
                     }
                     
-                    if (mouse.angleX_ < -180) {
+                    if (mouse.angleX_ < -180)
+                    {
                         mouse.angleX_ += 360;
                     }
                     
-                    if (mouse.angleY_ > 89) {
+                    if (mouse.angleY_ > 89)
+                    {
                         mouse.angleY_ = 89;
                     }
                     
-                    if (mouse.angleY_ < -89) {
+                    if (mouse.angleY_ < -89)
+                    {
                         mouse.angleY_ = -89;
                     }
                     
@@ -115,11 +129,13 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
                     mouse.y_= -mouse.R_ * sin(mouse.angleY_ / 180 * PI);
                     
                     float D = mouse.RR_ - mouse.x_ * mouse.x_ - mouse.y_ * mouse.y_;
-                    if (D < 0) {
+                    if (D < 0)
+                    {
                         D = 0;
                     }
                     
-                    if ((mouse.angleX_ < 90) && (mouse.angleX_ > -90)) {
+                    if ((mouse.angleX_ < 90) && (mouse.angleX_ > -90))
+                    {
                         mouse.z_ = sqrt(D);
                     } else {
                         mouse.z_ = -sqrt(D);
@@ -173,15 +189,18 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse) {
         exit = window.pollEvent(event);
     }
     //*/
-    if (mouse.dx_ != 0 || mouse.dy_ != 0 || mouse.dz_ != 0) {
+    if (mouse.dx_ != 0 || mouse.dy_ != 0 || mouse.dz_ != 0)
+    {
         
-        if ((mouse.x_ + mouse.dx_) * (mouse.x_ + mouse.dx_) + (mouse.y_ + mouse.dy_) * (mouse.y_ + mouse.dy_) + (mouse.z_ + mouse.dz_) * (mouse.z_ + mouse.dz_) < 100) {
+        if ((mouse.x_ + mouse.dx_) * (mouse.x_ + mouse.dx_) + (mouse.y_ + mouse.dy_) * (mouse.y_ + mouse.dy_) + (mouse.z_ + mouse.dz_) * (mouse.z_ + mouse.dz_) < 100)
+        {
             mouse.dx_ = 0;
             mouse.dy_ = 0;
             mouse.dz_ = 0;
         }
         
-        if ((mouse.x_ + mouse.dx_) * (mouse.x_ + mouse.dx_) + (mouse.y_ + mouse.dy_) * (mouse.y_ + mouse.dy_) + (mouse.z_ + mouse.dz_) * (mouse.z_ + mouse.dz_) > 2000000) {
+        if ((mouse.x_ + mouse.dx_) * (mouse.x_ + mouse.dx_) + (mouse.y_ + mouse.dy_) * (mouse.y_ + mouse.dy_) + (mouse.z_ + mouse.dz_) * (mouse.z_ + mouse.dz_) > 2000000)
+        {
             mouse.dx_ = 0;
             mouse.dy_ = 0;
             mouse.dz_ = 0;

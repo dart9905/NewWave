@@ -9,6 +9,7 @@
 #ifndef Event_hpp
 #define Event_hpp
 
+
 #include "GraphFile.hpp"
 #include "Management.hpp"
 #include <math.h>
@@ -22,6 +23,6 @@
  \param mouse reference to the current mouse object
  \return 0
  */
-int EVENT (sf::RenderWindow& window, mouse_t& mouse);
+int EVENT (sf::RenderWindow& window, mouse_t& mouse, Bar& Bar, sf::View& view);
 
 #endif /* Event_hpp */

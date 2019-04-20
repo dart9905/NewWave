@@ -32,6 +32,7 @@
 
 //Connecting our libraries
 //#include "GraphFile.hpp"
+//#include "Management.hpp"
 #include "Event.hpp"
 #include "Test.hpp"
 
@@ -63,7 +64,8 @@ int main(int, char const**)
     
     // Set the Icon
     sf::Image icon;
-    if (!icon.loadFromFile(resourcePath() + "icon.png")) {
+    if (!icon.loadFromFile(resourcePath() + "icon.png"))
+    {
         return EXIT_FAILURE;
     }
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
@@ -75,14 +77,20 @@ int main(int, char const**)
     
     // Load a sprite to display
     sf::Texture texture;
-    if (!texture.loadFromFile(resourcePath() + "cute_image.jpg")) {
+    if (!texture.loadFromFile(resourcePath() + "cute_image.jpg"))
+    {
         return EXIT_FAILURE;
     }
     sf::Sprite sprite(texture);
     
     sf::Clock clock;
+    sf::View view;
+    view.reset(sf::FloatRect(0, 0, window_width, window_height));
     
     mouse_t Mouse(-45, -45, 200);
+    Bar Bar(500, window_height / 2, 0, 0, window);
+    
+    
     
 
     // Start the game loop
@@ -98,7 +106,7 @@ int main(int, char const**)
         //float time = clock.getElapsedTime().asMilliseconds() / 2;
         
         // Process events
-        EVENT(window, Mouse);
+        EVENT(window, Mouse, Bar, view);
         
         // Draw the sprite
         /*
@@ -107,8 +115,12 @@ int main(int, char const**)
         window.draw(sprite);
         window.popGLStates();
         //*/
-        
-        glViewport ( (window.getSize()).x / 2 - window_width / 2 , (window.getSize()).y / 2 - window_height / 2 , window_width, window_height);
+        if ((window.getSize()).x >= 2 * Bar.getwidth())
+        {
+            glViewport ( (window.getSize()).x / 2 - window_width / 2 + (int)(Bar.getwidth() / 2), (window.getSize()).y / 2 - window_height / 2 , window_width, window_height);
+        } else {
+            glViewport ( (window.getSize()).x / 2 - window_width / 2, (window.getSize()).y / 2 - window_height / 2 , window_width, window_height);
+        }
         
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
@@ -117,11 +129,15 @@ int main(int, char const**)
         
         linepole();
         xyz();
-        drawhouse(arrayBox, 5, 1, 3);
-        drawhouse(arrayBox, -1, 1, 3);
         
-        drawhouse(arrayBox, -3, 1, -5);
+        drawhouse(arrayBox, 5, 1, 3, 0);
+        drawhouse(arrayBox, -1, 1, 3, 30);
+        drawhouse(arrayBox, -3, 1, -5, 0);
         
+        if ((window.getSize()).x >= 2 * Bar.getwidth())
+        {
+            Bar.draw();
+        }
         
         //*/
         // Update the window

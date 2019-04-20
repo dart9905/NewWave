@@ -75,9 +75,11 @@ GLuint LoadTexture(sf::String name)
     return texture;
 }
 
-int MakeTextures(SkinBox_t* arrayBox) {
+int MakeTextures(SkinBox_t* arrayBox)
+{
     char num;
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 6; i++)
+    {
         num = '1'+i;
         arrayBox [0] [i] = LoadTexture(resourcePath() + "resources/box_test/" + num + ".jpg");
     }
@@ -199,7 +201,8 @@ void createBox(SkinBox_t& box,float size)
 }
 
 
-void drawhouse(SkinBox_t* arrayBox) {
+void drawhouse(SkinBox_t* arrayBox)
+{
     
     glTranslatef(0, 0, 5 * GLOBsize2);
     createRectangle(arrayBox [0], GLOBsize * 5, GLOBsize * 5, GLOBsize / 5);
@@ -240,18 +243,23 @@ void drawhouse(SkinBox_t* arrayBox) {
 }
 
 
-void drawhouse(SkinBox_t* arrayBox, int x, int y, int z) {
+void drawhouse(SkinBox_t* arrayBox, int x, int y, int z, int angle)
+{
     glTranslatef(5 * GLOBsize2 * x, 5 * GLOBsize2 * y, 5 * GLOBsize2 * z);
+    glRotated(angle, 0, 1, 0);
     drawhouse(arrayBox);
+    glRotated(-angle, 0, 1, 0);
     glTranslatef(-5 * GLOBsize2 * x, -5 * GLOBsize2 * y, -5 * GLOBsize2 * z);
 }
 
 
-void linepole() {
+void linepole()
+{
     
     
     GLfloat arrayline0 [11] [2] [3];
-    for (int i = 0; i < 11; i++) {
+    for (int i = 0; i < 11; i++)
+    {
         arrayline0 [i] [0] [0] = i * GLOBsize * 5 -GLOBsize * 25;
         arrayline0 [i] [0] [1] = 0;
         arrayline0 [i] [0] [2] = -GLOBsize * 25;
@@ -261,7 +269,8 @@ void linepole() {
     }
     
     GLfloat arrayline1 [11] [2] [3];
-    for (int i = 0; i < 11; i++) {
+    for (int i = 0; i < 11; i++)
+    {
         arrayline1 [i] [0] [0] = -GLOBsize * 25;
         arrayline1 [i] [0] [1] = 0;
         arrayline1 [i] [0] [2] = i * GLOBsize * 5 -GLOBsize * 25;
@@ -275,8 +284,10 @@ void linepole() {
     glLineWidth(2);
     glBegin(GL_LINES);
     glColor3d(1, 1, 1);
-    for (int i = 0; i < 11; i++) {
-        if (i == 5) {
+    for (int i = 0; i < 11; i++)
+    {
+        if (i == 5)
+        {
             glVertex3fv(arrayline0 [i] [0]);
             glVertex3fv(arrayline);
             glVertex3fv(arrayline1 [i] [0]);
@@ -293,7 +304,8 @@ void linepole() {
 }
 
 
-void xyz() {
+void xyz()
+{
     
     
     GLfloat arrayline [3] [2] [3];
@@ -321,8 +333,10 @@ void xyz() {
     
     glLineWidth(3);
     glBegin(GL_LINES);
-    for (int i = 0; i < 3; i++) {
-        switch (i) {
+    for (int i = 0; i < 3; i++)
+    {
+        switch (i)
+        {
             case 0:
                 glColor3d(1, 0, 0);
                 break;

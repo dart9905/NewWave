@@ -38,7 +38,8 @@ class SkinBox_t
     GLuint right_;      ///<righg face texture
     GLuint front_;      ///<front face texture
 public:
-    ~SkinBox_t() {
+    ~SkinBox_t()
+    {
         glDeleteShader(error_);
         glDeleteShader(top_);
         glDeleteShader(bottom_);
@@ -48,7 +49,8 @@ public:
         glDeleteShader(front_);
     }
     
-    GLuint& operator [] (int i) {
+    GLuint& operator [] (int i)
+    {
         switch (i) {
             case 0:
                 return top_;
@@ -75,33 +77,36 @@ public:
     }
 };
 
-//*
-class mouse_t {
+/*!
+ \brief the mouse class is needed to store the master data coming from the mouse during operation.
+ */
+class mouse_t
+{
 public:
     
     mouse_t () {}
     mouse_t (float angleX, float angleY, float z);
     ~mouse_t() {}
     
-    sf::Vector2i posnew_;
-    sf::Vector2i posold_;
+    sf::Vector2i posnew_;       ///<position the mouse slider in the window
+    sf::Vector2i posold_;       ///old location of the mouse slider in the window
     
-    float angleX_ = 0;
-    float angleY_ = 0;
-    float x_ = 0;
-    float y_ = 0;
-    float z_ = 200;
+    float angleX_ = 0;          ///<the offset between the old and new coordinates of the mouse slider by x
+    float angleY_ = 0;          //<the offset between the old and new coordinates of the mouse slider by y
+    float x_ = 0;               ///<the coordinates of the camera x
+    float y_ = 0;               ///<the coordinates of the camera y
+    float z_ = 200;             ///<the coordinates of the camera z
     
-    float dx_ = 0;
-    float dy_ = 0;
-    float dz_ = 0;
-    float speed_ = 10;
+    float dx_ = 0;              ///<camera speed x
+    float dy_ = 0;              ///<camera speed y
+    float dz_ = 0;              ///<camera speed z
+    float speed_ = 10;          ///<camera speed
     
-    float RR_ = x_ * x_ + z_ * z_ + y_ * y_;
-    float R_  = sqrt(RR_);
+    float RR_ = x_ * x_ + z_ * z_ + y_ * y_;///<the square of the size of the radius of the distance between the origin and the point of the camera
+    float R_  = sqrt(RR_);      ///<the size of the radius of the distance between the origin and the point of the camera
     
     
-    bool checkbut_ = false;
+    bool checkbut_ = false;     ///<flag clicking on the mouse button
     
 };
 //*/
@@ -157,7 +162,7 @@ void drawhouse(SkinBox_t* arrayBox);
  \param z third coordinate
  \return void
  */
-void drawhouse(SkinBox_t* arrayBox, int x, int y, int z);
+void drawhouse(SkinBox_t* arrayBox, int x, int y, int z, int angle);
 
 /*!
  \brief draw the x y z axes which have the corresponding colors red, green, blue
