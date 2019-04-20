@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FA28F2AA224FEB500078A4A3 /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA28F2A8224FEB500078A4A3 /* Event.cpp */; };
+		FA4D7B55226B0B2000017415 /* Management.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA4D7B53226B0B2000017415 /* Management.cpp */; };
+		FA4D7B58226B198200017415 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA4D7B56226B198200017415 /* Test.cpp */; };
 		FAAE230E223D178100E323FB /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAAE230D223D178100E323FB /* ResourcePath.mm */; };
 		FAAE2311223D178100E323FB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAAE2310223D178100E323FB /* main.cpp */; };
 		FAAE2314223D178100E323FB /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAAE2313223D178100E323FB /* cute_image.jpg */; };
@@ -23,6 +25,10 @@
 /* Begin PBXFileReference section */
 		FA28F2A8224FEB500078A4A3 /* Event.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Event.cpp; sourceTree = "<group>"; };
 		FA28F2A9224FEB500078A4A3 /* Event.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Event.hpp; sourceTree = "<group>"; };
+		FA4D7B53226B0B2000017415 /* Management.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Management.cpp; sourceTree = "<group>"; };
+		FA4D7B54226B0B2000017415 /* Management.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Management.hpp; sourceTree = "<group>"; };
+		FA4D7B56226B198200017415 /* Test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
+		FA4D7B57226B198200017415 /* Test.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Test.hpp; sourceTree = "<group>"; };
 		FAAE2308223D178100E323FB /* NewWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAE230C223D178100E323FB /* NewWave-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NewWave-Info.plist"; sourceTree = "<group>"; };
 		FAAE230D223D178100E323FB /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
@@ -77,6 +83,10 @@
 				FAC19B1F223F7B7E00C44E40 /* GraphFile.cpp */,
 				FAC19B20223F7B7E00C44E40 /* GraphFile.hpp */,
 				FA28F2A8224FEB500078A4A3 /* Event.cpp */,
+				FA4D7B53226B0B2000017415 /* Management.cpp */,
+				FA4D7B54226B0B2000017415 /* Management.hpp */,
+				FA4D7B56226B198200017415 /* Test.cpp */,
+				FA4D7B57226B198200017415 /* Test.hpp */,
 				FA28F2A9224FEB500078A4A3 /* Event.hpp */,
 				FAAE2310223D178100E323FB /* main.cpp */,
 				FAC19B22223F8D0F00C44E40 /* resources */,
@@ -207,8 +217,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4D7B55226B0B2000017415 /* Management.cpp in Sources */,
 				FA28F2AA224FEB500078A4A3 /* Event.cpp in Sources */,
 				FAC19B21223F7B7E00C44E40 /* GraphFile.cpp in Sources */,
+				FA4D7B58226B198200017415 /* Test.cpp in Sources */,
 				FAAE2311223D178100E323FB /* main.cpp in Sources */,
 				FAAE230E223D178100E323FB /* ResourcePath.mm in Sources */,
 			);

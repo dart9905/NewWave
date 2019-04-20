@@ -80,41 +80,7 @@ class mouse_t {
 public:
     
     mouse_t () {}
-    mouse_t (float angleX, float angleY, float z): angleX_(angleX), angleY_(angleY), z_(z)
-    {
-        
-        if (angleX_ > 180) {
-            angleX_ -= 360;
-        }
-        
-        if (angleX_ < -180) {
-            angleX_ += 360;
-        }
-        
-        if (angleY_ > 89) {
-            angleY_ = 89;
-        }
-        
-        if (angleY_ < -89) {
-            angleY_ = -89;
-        }
-        
-        
-        x_=  R_ * sin(angleX_ / 180 * PI) * cos(angleY_ / 180 * PI);
-        
-        y_= -R_ * sin(angleY_ / 180 * PI);
-        
-        float D = RR_ - x_ * x_ - y_ * y_;
-        if (D < 0) {
-            D = 0;
-        }
-        
-        if ((angleX_ < 90) && (angleX_ > -90)) {
-            z_ = sqrt(D);
-        } else {
-            z_ = -sqrt(D);
-        }
-    }
+    mouse_t (float angleX, float angleY, float z);
     ~mouse_t() {}
     
     sf::Vector2i posnew_;
@@ -182,5 +148,24 @@ void createBox(SkinBox_t& box, float size);
  \return void
  */
 void drawhouse(SkinBox_t* arrayBox);
+
+/*!
+ \brief draw a house in 3D at x y z coordinates
+ \param arrayBox array texture house
+ \param x first coordinate
+ \param y second coordinate
+ \param z third coordinate
+ \return void
+ */
+void drawhouse(SkinBox_t* arrayBox, int x, int y, int z);
+
+/*!
+ \brief draw the x y z axes which have the corresponding colors red, green, blue
+ \return void
+ */
+void linepole();
+
+
+void xyz();
 
 #endif /* GraphFile_hpp */

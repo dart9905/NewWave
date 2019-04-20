@@ -9,6 +9,8 @@
 \item 
 \hyperlink{classmouse__t_a0117a5a34b22dea1ff9b9eb2872ed107}{mouse\+\_\+t} ()
 \item 
+\hyperlink{classmouse__t_a691b04ef52f94573b23d11dda776c151}{mouse\+\_\+t} (float angleX, float angleY, float z)
+\item 
 \hyperlink{classmouse__t_abe009b8c5b82914804113d5a85ee641a}{$\sim$mouse\+\_\+t} ()
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
@@ -30,17 +32,17 @@ sf\+::\+Vector2i \hyperlink{classmouse__t_a36e5d135625eb578cad8ebb7cb6a1294}{pos
 \item 
 sf\+::\+Vector2i \hyperlink{classmouse__t_a2db1a7bf88213de4b022aa1260e9f71e}{posold\+\_\+}
 \item 
-float \hyperlink{classmouse__t_a8c4c59a5c03edf37b4e8663bf1ac8864}{R\+\_\+} = 10
+float \hyperlink{classmouse__t_a8c4c59a5c03edf37b4e8663bf1ac8864}{R\+\_\+} = sqrt(\hyperlink{classmouse__t_acf93a98758b45159dbd34c6a2c71d122}{R\+R\+\_\+})
 \item 
-float \hyperlink{classmouse__t_acf93a98758b45159dbd34c6a2c71d122}{R\+R\+\_\+} = \hyperlink{classmouse__t_a8c4c59a5c03edf37b4e8663bf1ac8864}{R\+\_\+} $\ast$ \hyperlink{classmouse__t_a8c4c59a5c03edf37b4e8663bf1ac8864}{R\+\_\+}
+float \hyperlink{classmouse__t_acf93a98758b45159dbd34c6a2c71d122}{R\+R\+\_\+} = \hyperlink{classmouse__t_a902ac86b499a19c0cd4405d18bf03551}{x\+\_\+} $\ast$ \hyperlink{classmouse__t_a902ac86b499a19c0cd4405d18bf03551}{x\+\_\+} + \hyperlink{classmouse__t_a42626aabbe4860f2e6bb5e0e840c8e1d}{z\+\_\+} $\ast$ \hyperlink{classmouse__t_a42626aabbe4860f2e6bb5e0e840c8e1d}{z\+\_\+} + \hyperlink{classmouse__t_ac026f8fee6095db0f1867db5c250b83f}{y\+\_\+} $\ast$ \hyperlink{classmouse__t_ac026f8fee6095db0f1867db5c250b83f}{y\+\_\+}
 \item 
-float \hyperlink{classmouse__t_a6bcf637aa4f03937954c7e26c6123c7c}{speed\+\_\+} = 5
+float \hyperlink{classmouse__t_a6bcf637aa4f03937954c7e26c6123c7c}{speed\+\_\+} = 10
 \item 
 float \hyperlink{classmouse__t_a902ac86b499a19c0cd4405d18bf03551}{x\+\_\+} = 0
 \item 
 float \hyperlink{classmouse__t_ac026f8fee6095db0f1867db5c250b83f}{y\+\_\+} = 0
 \item 
-float \hyperlink{classmouse__t_a42626aabbe4860f2e6bb5e0e840c8e1d}{z\+\_\+} = 100
+float \hyperlink{classmouse__t_a42626aabbe4860f2e6bb5e0e840c8e1d}{z\+\_\+} = 200
 \end{DoxyCompactItemize}
 
 
@@ -48,8 +50,14 @@ float \hyperlink{classmouse__t_a42626aabbe4860f2e6bb5e0e840c8e1d}{z\+\_\+} = 100
 \mbox{\Hypertarget{classmouse__t_a0117a5a34b22dea1ff9b9eb2872ed107}\label{classmouse__t_a0117a5a34b22dea1ff9b9eb2872ed107}} 
 \index{mouse\+\_\+t@{mouse\+\_\+t}!mouse\+\_\+t@{mouse\+\_\+t}}
 \index{mouse\+\_\+t@{mouse\+\_\+t}!mouse\+\_\+t@{mouse\+\_\+t}}
-\subsubsection{\texorpdfstring{mouse\+\_\+t()}{mouse\_t()}}
+\subsubsection{\texorpdfstring{mouse\+\_\+t()}{mouse\_t()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \hyperlink{classmouse__t}{mouse\+\_\+t} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmouse__t_a691b04ef52f94573b23d11dda776c151}\label{classmouse__t_a691b04ef52f94573b23d11dda776c151}} 
+\index{mouse\+\_\+t@{mouse\+\_\+t}!mouse\+\_\+t@{mouse\+\_\+t}}
+\index{mouse\+\_\+t@{mouse\+\_\+t}!mouse\+\_\+t@{mouse\+\_\+t}}
+\subsubsection{\texorpdfstring{mouse\+\_\+t()}{mouse\_t()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classmouse__t}{mouse\+\_\+t} (\begin{DoxyParamCaption}\item[{float}]{angleX,  }\item[{float}]{angleY,  }\item[{float}]{z }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classmouse__t_abe009b8c5b82914804113d5a85ee641a}\label{classmouse__t_abe009b8c5b82914804113d5a85ee641a}} 
 \index{mouse\+\_\+t@{mouse\+\_\+t}!````~mouse\+\_\+t@{$\sim$mouse\+\_\+t}}
@@ -112,19 +120,19 @@ float \hyperlink{classmouse__t_a42626aabbe4860f2e6bb5e0e840c8e1d}{z\+\_\+} = 100
 \index{mouse\+\_\+t@{mouse\+\_\+t}!R\+\_\+@{R\+\_\+}}
 \index{R\+\_\+@{R\+\_\+}!mouse\+\_\+t@{mouse\+\_\+t}}
 \subsubsection{\texorpdfstring{R\+\_\+}{R\_}}
-{\footnotesize\ttfamily float R\+\_\+ = 10}
+{\footnotesize\ttfamily float R\+\_\+ = sqrt(\hyperlink{classmouse__t_acf93a98758b45159dbd34c6a2c71d122}{R\+R\+\_\+})}
 
 \mbox{\Hypertarget{classmouse__t_acf93a98758b45159dbd34c6a2c71d122}\label{classmouse__t_acf93a98758b45159dbd34c6a2c71d122}} 
 \index{mouse\+\_\+t@{mouse\+\_\+t}!R\+R\+\_\+@{R\+R\+\_\+}}
 \index{R\+R\+\_\+@{R\+R\+\_\+}!mouse\+\_\+t@{mouse\+\_\+t}}
 \subsubsection{\texorpdfstring{R\+R\+\_\+}{RR\_}}
-{\footnotesize\ttfamily float R\+R\+\_\+ = \hyperlink{classmouse__t_a8c4c59a5c03edf37b4e8663bf1ac8864}{R\+\_\+} $\ast$ \hyperlink{classmouse__t_a8c4c59a5c03edf37b4e8663bf1ac8864}{R\+\_\+}}
+{\footnotesize\ttfamily float R\+R\+\_\+ = \hyperlink{classmouse__t_a902ac86b499a19c0cd4405d18bf03551}{x\+\_\+} $\ast$ \hyperlink{classmouse__t_a902ac86b499a19c0cd4405d18bf03551}{x\+\_\+} + \hyperlink{classmouse__t_a42626aabbe4860f2e6bb5e0e840c8e1d}{z\+\_\+} $\ast$ \hyperlink{classmouse__t_a42626aabbe4860f2e6bb5e0e840c8e1d}{z\+\_\+} + \hyperlink{classmouse__t_ac026f8fee6095db0f1867db5c250b83f}{y\+\_\+} $\ast$ \hyperlink{classmouse__t_ac026f8fee6095db0f1867db5c250b83f}{y\+\_\+}}
 
 \mbox{\Hypertarget{classmouse__t_a6bcf637aa4f03937954c7e26c6123c7c}\label{classmouse__t_a6bcf637aa4f03937954c7e26c6123c7c}} 
 \index{mouse\+\_\+t@{mouse\+\_\+t}!speed\+\_\+@{speed\+\_\+}}
 \index{speed\+\_\+@{speed\+\_\+}!mouse\+\_\+t@{mouse\+\_\+t}}
 \subsubsection{\texorpdfstring{speed\+\_\+}{speed\_}}
-{\footnotesize\ttfamily float speed\+\_\+ = 5}
+{\footnotesize\ttfamily float speed\+\_\+ = 10}
 
 \mbox{\Hypertarget{classmouse__t_a902ac86b499a19c0cd4405d18bf03551}\label{classmouse__t_a902ac86b499a19c0cd4405d18bf03551}} 
 \index{mouse\+\_\+t@{mouse\+\_\+t}!x\+\_\+@{x\+\_\+}}
@@ -142,10 +150,11 @@ float \hyperlink{classmouse__t_a42626aabbe4860f2e6bb5e0e840c8e1d}{z\+\_\+} = 100
 \index{mouse\+\_\+t@{mouse\+\_\+t}!z\+\_\+@{z\+\_\+}}
 \index{z\+\_\+@{z\+\_\+}!mouse\+\_\+t@{mouse\+\_\+t}}
 \subsubsection{\texorpdfstring{z\+\_\+}{z\_}}
-{\footnotesize\ttfamily float z\+\_\+ = 100}
+{\footnotesize\ttfamily float z\+\_\+ = 200}
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{GraphFile_8hpp}{Graph\+File.\+hpp}\end{DoxyCompactItemize}
+\hyperlink{GraphFile_8hpp}{Graph\+File.\+hpp}\item 
+\hyperlink{GraphFile_8cpp}{Graph\+File.\+cpp}\end{DoxyCompactItemize}

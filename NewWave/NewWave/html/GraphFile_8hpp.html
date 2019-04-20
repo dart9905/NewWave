@@ -71,6 +71,7 @@ $(function() {
 <code>#include &lt;SFML/OpenGL.hpp&gt;</code><br />
 <code>#include &lt;GLUT/GLUT.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
 </div>
 <p><a href="GraphFile_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -98,28 +99,36 @@ Functions</h2></td></tr>
 <tr class="memitem:a75407d74c8144f46fcb61d34d00f89f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#a75407d74c8144f46fcb61d34d00f89f2">drawhouse</a> (<a class="el" href="classSkinBox__t.html">SkinBox_t</a> *arrayBox)</td></tr>
 <tr class="memdesc:a75407d74c8144f46fcb61d34d00f89f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">draw home in 3d  <a href="#a75407d74c8144f46fcb61d34d00f89f2">More...</a><br /></td></tr>
 <tr class="separator:a75407d74c8144f46fcb61d34d00f89f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ea1ae5eeac94dbbe84b32928c5ad47e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#a6ea1ae5eeac94dbbe84b32928c5ad47e">drawhouse</a> (<a class="el" href="classSkinBox__t.html">SkinBox_t</a> *arrayBox, int x, int y, int z)</td></tr>
+<tr class="memdesc:a6ea1ae5eeac94dbbe84b32928c5ad47e"><td class="mdescLeft">&#160;</td><td class="mdescRight">draw a house in 3D at x y z coordinates  <a href="#a6ea1ae5eeac94dbbe84b32928c5ad47e">More...</a><br /></td></tr>
+<tr class="separator:a6ea1ae5eeac94dbbe84b32928c5ad47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e35445fcfbe63892c2e3bb0dc7887f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#a62e35445fcfbe63892c2e3bb0dc7887f">linepole</a> ()</td></tr>
+<tr class="memdesc:a62e35445fcfbe63892c2e3bb0dc7887f"><td class="mdescLeft">&#160;</td><td class="mdescRight">draw the x y z axes which have the corresponding colors red, green, blue  <a href="#a62e35445fcfbe63892c2e3bb0dc7887f">More...</a><br /></td></tr>
+<tr class="separator:a62e35445fcfbe63892c2e3bb0dc7887f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af52892e1e1e68787f2e3ddd137145e41"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#af52892e1e1e68787f2e3ddd137145e41">LoadTexture</a> (sf::String name)</td></tr>
 <tr class="memdesc:af52892e1e1e68787f2e3ddd137145e41"><td class="mdescLeft">&#160;</td><td class="mdescRight">loads the specified texture from the file specified in the parameter  <a href="#af52892e1e1e68787f2e3ddd137145e41">More...</a><br /></td></tr>
 <tr class="separator:af52892e1e1e68787f2e3ddd137145e41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34a56e8bcfcc3a5a608349dedc23f4b3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#a34a56e8bcfcc3a5a608349dedc23f4b3">MakeTextures</a> (<a class="el" href="classSkinBox__t.html">SkinBox_t</a> *arrayBox)</td></tr>
 <tr class="memdesc:a34a56e8bcfcc3a5a608349dedc23f4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">a function to initialize an array of (different) textures  <a href="#a34a56e8bcfcc3a5a608349dedc23f4b3">More...</a><br /></td></tr>
 <tr class="separator:a34a56e8bcfcc3a5a608349dedc23f4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86b2e270dfcf818b4bb2b0c8dbc17a44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#a86b2e270dfcf818b4bb2b0c8dbc17a44">xyz</a> ()</td></tr>
+<tr class="separator:a86b2e270dfcf818b4bb2b0c8dbc17a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6cbe89efe8c5158fb4a4e99d60075282"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#a6cbe89efe8c5158fb4a4e99d60075282">GLOBsize</a> = 32.f</td></tr>
+<tr class="memitem:a6cbe89efe8c5158fb4a4e99d60075282"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#a6cbe89efe8c5158fb4a4e99d60075282">GLOBsize</a> = 8.f</td></tr>
 <tr class="memdesc:a6cbe89efe8c5158fb4a4e99d60075282"><td class="mdescLeft">&#160;</td><td class="mdescRight">size texture  <a href="#a6cbe89efe8c5158fb4a4e99d60075282">More...</a><br /></td></tr>
 <tr class="separator:a6cbe89efe8c5158fb4a4e99d60075282"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae153df7875cdede571221ace3ce9b4f"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#aae153df7875cdede571221ace3ce9b4f">GLOBsize2</a> = 16.f</td></tr>
+<tr class="memitem:aae153df7875cdede571221ace3ce9b4f"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#aae153df7875cdede571221ace3ce9b4f">GLOBsize2</a> = 4.f</td></tr>
 <tr class="memdesc:aae153df7875cdede571221ace3ce9b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">size texture / 2  <a href="#aae153df7875cdede571221ace3ce9b4f">More...</a><br /></td></tr>
 <tr class="separator:aae153df7875cdede571221ace3ce9b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa08a577393243b86dfd2a97e61443673"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#aa08a577393243b86dfd2a97e61443673">PI</a> = 3.141592653</td></tr>
 <tr class="memdesc:aa08a577393243b86dfd2a97e61443673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pi - pizdec.  <a href="#aa08a577393243b86dfd2a97e61443673">More...</a><br /></td></tr>
 <tr class="separator:aa08a577393243b86dfd2a97e61443673"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7be74e799254792ccf1dddce8c4cd0cb"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#a7be74e799254792ccf1dddce8c4cd0cb">window_height</a> = 1200</td></tr>
+<tr class="memitem:a7be74e799254792ccf1dddce8c4cd0cb"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#a7be74e799254792ccf1dddce8c4cd0cb">window_height</a> = 1800</td></tr>
 <tr class="memdesc:a7be74e799254792ccf1dddce8c4cd0cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">size window height  <a href="#a7be74e799254792ccf1dddce8c4cd0cb">More...</a><br /></td></tr>
 <tr class="separator:a7be74e799254792ccf1dddce8c4cd0cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39a2fe953af0d179b5a76a26458ce57e"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#a39a2fe953af0d179b5a76a26458ce57e">window_width</a> = 1500</td></tr>
+<tr class="memitem:a39a2fe953af0d179b5a76a26458ce57e"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GraphFile_8hpp.html#a39a2fe953af0d179b5a76a26458ce57e">window_width</a> = 2560</td></tr>
 <tr class="memdesc:a39a2fe953af0d179b5a76a26458ce57e"><td class="mdescLeft">&#160;</td><td class="mdescRight">size window width  <a href="#a39a2fe953af0d179b5a76a26458ce57e">More...</a><br /></td></tr>
 <tr class="separator:a39a2fe953af0d179b5a76a26458ce57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -230,7 +239,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="a75407d74c8144f46fcb61d34d00f89f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75407d74c8144f46fcb61d34d00f89f2">&#9670;&nbsp;</a></span>drawhouse()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a75407d74c8144f46fcb61d34d00f89f2">&#9670;&nbsp;</a></span>drawhouse() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -252,6 +261,78 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a6ea1ae5eeac94dbbe84b32928c5ad47e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ea1ae5eeac94dbbe84b32928c5ad47e">&#9670;&nbsp;</a></span>drawhouse() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawhouse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classSkinBox__t.html">SkinBox_t</a> *&#160;</td>
+          <td class="paramname"><em>arrayBox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>draw a house in 3D at x y z coordinates </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arrayBox</td><td>array texture house </td></tr>
+    <tr><td class="paramname">x</td><td>first coordinate </td></tr>
+    <tr><td class="paramname">y</td><td>second coordinate </td></tr>
+    <tr><td class="paramname">z</td><td>third coordinate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a62e35445fcfbe63892c2e3bb0dc7887f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62e35445fcfbe63892c2e3bb0dc7887f">&#9670;&nbsp;</a></span>linepole()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void linepole </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>draw the x y z axes which have the corresponding colors red, green, blue </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
@@ -311,6 +392,23 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a86b2e270dfcf818b4bb2b0c8dbc17a44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86b2e270dfcf818b4bb2b0c8dbc17a44">&#9670;&nbsp;</a></span>xyz()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xyz </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a6cbe89efe8c5158fb4a4e99d60075282"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6cbe89efe8c5158fb4a4e99d60075282">&#9670;&nbsp;</a></span>GLOBsize</h2>
@@ -319,7 +417,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const float GLOBsize = 32.f</td>
+          <td class="memname">const float GLOBsize = 8.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -335,7 +433,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const float GLOBsize2 = 16.f</td>
+          <td class="memname">const float GLOBsize2 = 4.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -367,7 +465,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int window_height = 1200</td>
+          <td class="memname">const int window_height = 1800</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -383,7 +481,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int window_width = 1500</td>
+          <td class="memname">const int window_width = 2560</td>
         </tr>
       </table>
 </div><div class="memdoc">

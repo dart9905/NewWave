@@ -14,6 +14,43 @@
 // Here is a small helper for you! Have a look.
 #include "ResourcePath.hpp"
 
+
+mouse_t::mouse_t (float angleX, float angleY, float z): angleX_(angleX), angleY_(angleY), z_(z)
+{
+    
+    if (angleX_ > 180) {
+        angleX_ -= 360;
+    }
+    
+    if (angleX_ < -180) {
+        angleX_ += 360;
+    }
+    
+    if (angleY_ > 89) {
+        angleY_ = 89;
+    }
+    
+    if (angleY_ < -89) {
+        angleY_ = -89;
+    }
+    
+    
+    x_=  R_ * sin(angleX_ / 180 * PI) * cos(angleY_ / 180 * PI);
+    
+    y_= -R_ * sin(angleY_ / 180 * PI);
+    
+    float D = RR_ - x_ * x_ - y_ * y_;
+    if (D < 0) {
+        D = 0;
+    }
+    
+    if ((angleX_ < 90) && (angleX_ > -90)) {
+        z_ = sqrt(D);
+    } else {
+        z_ = -sqrt(D);
+    }
+}
+
 GLuint LoadTexture(sf::String name)
 {
     sf::Image image;
@@ -93,6 +130,8 @@ void createRectangle(SkinBox_t& box,float x_size, float y_size, float z_size)
     glBindTexture(GL_TEXTURE_2D, box [0]);
     glBegin(GL_QUADS);
     //top
+    
+    glColor3f(1, 1, 1);
     glTexCoord2f(0, 0);     glVertex3f(-x_size, y_size, -z_size);
     glTexCoord2f(1, 0);     glVertex3f( x_size, y_size, -z_size);
     glTexCoord2f(1, 1);     glVertex3f( x_size, y_size,  z_size);
@@ -101,6 +140,7 @@ void createRectangle(SkinBox_t& box,float x_size, float y_size, float z_size)
     glBindTexture(GL_TEXTURE_2D, box [2]);
     glBegin(GL_QUADS);
     //front/* z+
+    glColor3f(1, 1, 1);
     glTexCoord2f(0, 0);     glVertex3f(-x_size, -y_size, -z_size);
     glTexCoord2f(1, 0);     glVertex3f( x_size, -y_size, -z_size);
     glTexCoord2f(1, 1);     glVertex3f( x_size,  y_size, -z_size);
@@ -110,6 +150,7 @@ void createRectangle(SkinBox_t& box,float x_size, float y_size, float z_size)
     glBindTexture(GL_TEXTURE_2D, box [4]);
     glBegin(GL_QUADS);
     //back x-
+    glColor3f(1, 1, 1);
     glTexCoord2f(0, 0);     glVertex3f( x_size, -y_size, z_size);
     glTexCoord2f(1, 0);     glVertex3f(-x_size, -y_size, z_size);
     glTexCoord2f(1, 1);     glVertex3f(-x_size,  y_size, z_size);
@@ -119,6 +160,7 @@ void createRectangle(SkinBox_t& box,float x_size, float y_size, float z_size)
     glBindTexture(GL_TEXTURE_2D, box [1]);
     glBegin(GL_QUADS);
     //left x-
+    glColor3f(1, 1, 1);
     glTexCoord2f(0, 0);     glVertex3f(-x_size, -y_size,  z_size);
     glTexCoord2f(1, 0);     glVertex3f(-x_size, -y_size, -z_size);
     glTexCoord2f(1, 1);     glVertex3f(-x_size,  y_size, -z_size);
@@ -128,6 +170,7 @@ void createRectangle(SkinBox_t& box,float x_size, float y_size, float z_size)
     glBindTexture(GL_TEXTURE_2D, box [3]);
     glBegin(GL_QUADS);
     //right x+
+    glColor3f(1, 1, 1);
     glTexCoord2f(0, 0);     glVertex3f( x_size, -y_size, -z_size);
     glTexCoord2f(1, 0);     glVertex3f( x_size, -y_size,  z_size);
     glTexCoord2f(1, 1);     glVertex3f( x_size,  y_size,  z_size);
@@ -136,14 +179,16 @@ void createRectangle(SkinBox_t& box,float x_size, float y_size, float z_size)
     
     glBindTexture(GL_TEXTURE_2D, box [5]);
     glBegin(GL_QUADS);
-    //glColor3f(1, 0, 0);
     //bottom
+    
+    glColor3f(1, 1, 1);
     glTexCoord2f(0, 0);     glVertex3f(-x_size, -y_size,  z_size);
     glTexCoord2f(1, 0);     glVertex3f( x_size, -y_size,  z_size);
     glTexCoord2f(1, 1);     glVertex3f( x_size, -y_size, -z_size);
     glTexCoord2f(0, 1);     glVertex3f(-x_size, -y_size, -z_size);
     glEnd();
     glDisable(GL_ALPHA_TEST);
+    //glFlush();
     
 }
 
@@ -191,5 +236,109 @@ void drawhouse(SkinBox_t* arrayBox) {
     glTranslatef(0, -0.7 * 5 * GLOBsize2, 0);
     glRotated(45, 1, 0, 0);
     glTranslatef(0, -5 * GLOBsize2, 0);
+    return;
+}
+
+
+void drawhouse(SkinBox_t* arrayBox, int x, int y, int z) {
+    glTranslatef(5 * GLOBsize2 * x, 5 * GLOBsize2 * y, 5 * GLOBsize2 * z);
+    drawhouse(arrayBox);
+    glTranslatef(-5 * GLOBsize2 * x, -5 * GLOBsize2 * y, -5 * GLOBsize2 * z);
+}
+
+
+void linepole() {
+    
+    
+    GLfloat arrayline0 [11] [2] [3];
+    for (int i = 0; i < 11; i++) {
+        arrayline0 [i] [0] [0] = i * GLOBsize * 5 -GLOBsize * 25;
+        arrayline0 [i] [0] [1] = 0;
+        arrayline0 [i] [0] [2] = -GLOBsize * 25;
+        arrayline0 [i] [1] [0] = i * GLOBsize * 5 -GLOBsize * 25;
+        arrayline0 [i] [1] [1] = 0;
+        arrayline0 [i] [1] [2] = GLOBsize * 25;
+    }
+    
+    GLfloat arrayline1 [11] [2] [3];
+    for (int i = 0; i < 11; i++) {
+        arrayline1 [i] [0] [0] = -GLOBsize * 25;
+        arrayline1 [i] [0] [1] = 0;
+        arrayline1 [i] [0] [2] = i * GLOBsize * 5 -GLOBsize * 25;
+        arrayline1 [i] [1] [0] = GLOBsize * 25;
+        arrayline1 [i] [1] [1] = 0;
+        arrayline1 [i] [1] [2] = i * GLOBsize * 5 -GLOBsize * 25;
+    }
+    
+    GLfloat arrayline [] = {0,0,0};
+    
+    glLineWidth(2);
+    glBegin(GL_LINES);
+    glColor3d(1, 1, 1);
+    for (int i = 0; i < 11; i++) {
+        if (i == 5) {
+            glVertex3fv(arrayline0 [i] [0]);
+            glVertex3fv(arrayline);
+            glVertex3fv(arrayline1 [i] [0]);
+            glVertex3fv(arrayline);
+            i++;
+        }
+        glVertex3fv(arrayline0 [i] [0]);
+        glVertex3fv(arrayline0 [i] [1]);
+        glVertex3fv(arrayline1 [i] [0]);
+        glVertex3fv(arrayline1 [i] [1]);
+    }
+    glEnd();
+    return;
+}
+
+
+void xyz() {
+    
+    
+    GLfloat arrayline [3] [2] [3];
+    arrayline [0] [0] [0] = 0;
+    arrayline [0] [0] [1] = 0;
+    arrayline [0] [0] [2] = 0;
+    arrayline [0] [1] [0] = 30 * GLOBsize;
+    arrayline [0] [1] [1] = 0;
+    arrayline [0] [1] [2] = 0;
+    
+    arrayline [1] [0] [0] = 0;
+    arrayline [1] [0] [1] = 0;
+    arrayline [1] [0] [2] = 0;
+    arrayline [1] [1] [0] = 0;
+    arrayline [1] [1] [1] = 30 * GLOBsize;
+    arrayline [1] [1] [2] = 0;
+    
+    arrayline [2] [0] [0] = 0;
+    arrayline [2] [0] [1] = 0;
+    arrayline [2] [0] [2] = 0;
+    arrayline [2] [1] [0] = 0;
+    arrayline [2] [1] [1] = 0;
+    arrayline [2] [1] [2] = 30 * GLOBsize;
+    
+    
+    glLineWidth(3);
+    glBegin(GL_LINES);
+    for (int i = 0; i < 3; i++) {
+        switch (i) {
+            case 0:
+                glColor3d(1, 0, 0);
+                break;
+            case 1:
+                glColor3d(0, 1, 0);
+                break;
+            case 2:
+                glColor3d(0, 0, 1);
+                break;
+                
+            default:
+                break;
+        }
+        glVertex3fv(arrayline [i] [0]);
+        glVertex3fv(arrayline [i] [1]);
+    }
+    glEnd();
     return;
 }

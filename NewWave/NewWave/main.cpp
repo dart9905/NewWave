@@ -33,6 +33,7 @@
 //Connecting our libraries
 //#include "GraphFile.hpp"
 #include "Event.hpp"
+#include "Test.hpp"
 
 //      =============================================
 //      ==                                         ==
@@ -82,6 +83,7 @@ int main(int, char const**)
     sf::Clock clock;
     
     mouse_t Mouse(-45, -45, 200);
+    
 
     // Start the game loop
     while (window.isOpen())
@@ -106,19 +108,26 @@ int main(int, char const**)
         window.popGLStates();
         //*/
         
+        glViewport ( (window.getSize()).x / 2 - window_width / 2 , (window.getSize()).y / 2 - window_height / 2 , window_width, window_height);
+        
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
-        glViewport ( (window.getSize()).x / 2 - window_width / 2 , (window.getSize()).y / 2 - window_height / 2 , window_width, window_height);
         gluLookAt(Mouse.x_, Mouse.y_, Mouse.z_, 0, 0, 0, 0, 1, 0);
         
         
-        drawhouse(arrayBox);
+        linepole();
+        xyz();
+        drawhouse(arrayBox, 5, 1, 3);
+        drawhouse(arrayBox, -1, 1, 3);
         
+        drawhouse(arrayBox, -3, 1, -5);
         
         
         //*/
         // Update the window
         window.display();
     }
+    
+    system("say \"мяу\"");
     return EXIT_SUCCESS;
 }

@@ -10,6 +10,7 @@
 #define Event_hpp
 
 #include "GraphFile.hpp"
+#include "Management.hpp"
 #include <math.h>
 #include <stdio.h>
 #include <unistd.h>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['skinbox_5ft',['SkinBox_t',['../classSkinBox__t.html',1,'']]]
+  ['mouse_5ft',['mouse_t',['../classmouse__t.html',1,'']]]
 ];

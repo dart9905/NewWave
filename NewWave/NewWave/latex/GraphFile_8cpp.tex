@@ -14,10 +14,16 @@ void \hyperlink{GraphFile_8cpp_ad13eed1328cfc8c0c7416f40e1c281e9}{create\+Rectan
 \begin{DoxyCompactList}\small\item\em draws a picture box on the texture of the box using the dimensions specified \end{DoxyCompactList}\item 
 void \hyperlink{GraphFile_8cpp_a75407d74c8144f46fcb61d34d00f89f2}{drawhouse} (\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} $\ast$array\+Box)
 \begin{DoxyCompactList}\small\item\em draw home in 3d \end{DoxyCompactList}\item 
+void \hyperlink{GraphFile_8cpp_a6ea1ae5eeac94dbbe84b32928c5ad47e}{drawhouse} (\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} $\ast$array\+Box, int x, int y, int z)
+\begin{DoxyCompactList}\small\item\em draw a house in 3D at x y z coordinates \end{DoxyCompactList}\item 
+void \hyperlink{GraphFile_8cpp_a62e35445fcfbe63892c2e3bb0dc7887f}{linepole} ()
+\begin{DoxyCompactList}\small\item\em draw the x y z axes which have the corresponding colors red, green, blue \end{DoxyCompactList}\item 
 G\+Luint \hyperlink{GraphFile_8cpp_af52892e1e1e68787f2e3ddd137145e41}{Load\+Texture} (sf\+::\+String name)
 \begin{DoxyCompactList}\small\item\em loads the specified texture from the file specified in the parameter \end{DoxyCompactList}\item 
 int \hyperlink{GraphFile_8cpp_a34a56e8bcfcc3a5a608349dedc23f4b3}{Make\+Textures} (\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} $\ast$array\+Box)
-\begin{DoxyCompactList}\small\item\em a function to initialize an array of (different) textures \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em a function to initialize an array of (different) textures \end{DoxyCompactList}\item 
+void \hyperlink{GraphFile_8cpp_a86b2e270dfcf818b4bb2b0c8dbc17a44}{xyz} ()
+\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -68,7 +74,7 @@ returns void
 \mbox{\Hypertarget{GraphFile_8cpp_a75407d74c8144f46fcb61d34d00f89f2}\label{GraphFile_8cpp_a75407d74c8144f46fcb61d34d00f89f2}} 
 \index{Graph\+File.\+cpp@{Graph\+File.\+cpp}!drawhouse@{drawhouse}}
 \index{drawhouse@{drawhouse}!Graph\+File.\+cpp@{Graph\+File.\+cpp}}
-\subsubsection{\texorpdfstring{drawhouse()}{drawhouse()}}
+\subsubsection{\texorpdfstring{drawhouse()}{drawhouse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void drawhouse (\begin{DoxyParamCaption}\item[{\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} $\ast$}]{array\+Box }\end{DoxyParamCaption})}
 
 
@@ -80,6 +86,43 @@ draw home in 3d
 {\em array\+Box} & array texture house \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{GraphFile_8cpp_a6ea1ae5eeac94dbbe84b32928c5ad47e}\label{GraphFile_8cpp_a6ea1ae5eeac94dbbe84b32928c5ad47e}} 
+\index{Graph\+File.\+cpp@{Graph\+File.\+cpp}!drawhouse@{drawhouse}}
+\index{drawhouse@{drawhouse}!Graph\+File.\+cpp@{Graph\+File.\+cpp}}
+\subsubsection{\texorpdfstring{drawhouse()}{drawhouse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void drawhouse (\begin{DoxyParamCaption}\item[{\hyperlink{classSkinBox__t}{Skin\+Box\+\_\+t} $\ast$}]{array\+Box,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+
+
+draw a house in 3D at x y z coordinates 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Box} & array texture house \\
+\hline
+{\em x} & first coordinate \\
+\hline
+{\em y} & second coordinate \\
+\hline
+{\em z} & third coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{GraphFile_8cpp_a62e35445fcfbe63892c2e3bb0dc7887f}\label{GraphFile_8cpp_a62e35445fcfbe63892c2e3bb0dc7887f}} 
+\index{Graph\+File.\+cpp@{Graph\+File.\+cpp}!linepole@{linepole}}
+\index{linepole@{linepole}!Graph\+File.\+cpp@{Graph\+File.\+cpp}}
+\subsubsection{\texorpdfstring{linepole()}{linepole()}}
+{\footnotesize\ttfamily void linepole (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+draw the x y z axes which have the corresponding colors red, green, blue 
+
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
@@ -122,3 +165,9 @@ returns 0
 \begin{DoxyWarning}{Warning}
 the function does not control the size of the array, you should manually update the function. 
 \end{DoxyWarning}
+\mbox{\Hypertarget{GraphFile_8cpp_a86b2e270dfcf818b4bb2b0c8dbc17a44}\label{GraphFile_8cpp_a86b2e270dfcf818b4bb2b0c8dbc17a44}} 
+\index{Graph\+File.\+cpp@{Graph\+File.\+cpp}!xyz@{xyz}}
+\index{xyz@{xyz}!Graph\+File.\+cpp@{Graph\+File.\+cpp}}
+\subsubsection{\texorpdfstring{xyz()}{xyz()}}
+{\footnotesize\ttfamily void xyz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_5b_5d',['operator[]',['../classSkinBox__t.html#ae4bc2b4e970e3dd642b0f06489412b2f',1,'SkinBox_t']]]
+  ['normalize',['normalize',['../Test_8cpp.html#acce5106a44cc18a6303da39980f5fe9a',1,'Test.cpp']]]
 ];
