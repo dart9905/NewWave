@@ -17,12 +17,13 @@
 #include <unistd.h>
 
 
+
 /*!
  \brief the function of processing all events (keystrokes, mouse buttons, etc).
  \param window the reference to the current window
  \param mouse reference to the current mouse object
  \return 0
  */
-int EVENT (sf::RenderWindow& window, mouse_t& mouse, Bar& Bar, sf::View& view);
+int EVENT (sf::RenderWindow& window, mouse_t& mouse, Bar& Bar, sf::View& view, int* STEP);
 
 #endif /* Event_hpp */

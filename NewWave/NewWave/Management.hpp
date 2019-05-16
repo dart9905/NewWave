@@ -12,27 +12,36 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>
 #include <GLUT/GLUT.h>
+#include <math.h>
 #include <iostream>
 #include <cassert>
 
+enum NameBarOBJ {
+    BUTTON = 1,
+    SLIDER = 2
+};
 
 class BarOBJ
 {
 protected:
     int name_;
+    int sizepoint_ = 28;
+    float width_ = 0;
+    float height_ = 0;
+    sf::RenderWindow& window_;
 public:
-    BarOBJ();
-    ~BarOBJ();
-    int update();
-    int draw(sf::RenderWindow& window);
-    int get();
+    BarOBJ(sf::RenderWindow& window);
+    virtual ~BarOBJ();
+    virtual int update();
+    virtual int draw();
+    virtual int get();
     
 };
 
 class Button: virtual protected BarOBJ
 {
 public:
-    Button();
+    Button(sf::RenderWindow& window);
     ~Button();
     int update();
     int draw(sf::RenderWindow& window);
@@ -42,7 +51,7 @@ public:
 class Slider: virtual protected BarOBJ
 {
 public:
-    Slider();
+    Slider(sf::RenderWindow& window);
     ~Slider();
     int update();
     int draw(sf::RenderWindow& window);
@@ -59,7 +68,7 @@ class Bar
     float x_ = 0;
     float y_ = 0;
     int size_ = 0;
-    int capacity_ = 0;
+    int capacity_ = -1;
     
     sf::RenderWindow& window_;
     sf::RectangleShape rect;

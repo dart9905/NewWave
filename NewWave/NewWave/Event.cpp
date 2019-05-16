@@ -8,8 +8,7 @@
 
 #include "Event.hpp"
 
-
-int EVENT (sf::RenderWindow& window, mouse_t& mouse, Bar& Bar, sf::View& view)
+int EVENT (sf::RenderWindow& window, mouse_t& mouse, Bar& Bar, sf::View& view, int* STEP)
 {
     sf::Event event;
     
@@ -29,15 +28,24 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse, Bar& Bar, sf::View& view)
     bool exit = window.pollEvent(event);
     if (!exit && (mouse.dx_ == 0) && (mouse.dy_ == 0) && (mouse.dz_ == 0))
     {
-        while (!exit)
+        int time = 0;
+        while (!exit && time < 50)
         {
+            time++;
             usleep(5000);
             //printf("sleep\n");
             exit = window.pollEvent(event);
+            if (time == 50) {
+                (*STEP)++;
+                if ((*STEP) > 4) {
+                    (*STEP) = 0;
+                }
+            }
         }
     }
     while (exit)
     {
+        (*STEP) = -1;
         switch (event.type)
         {
             case sf::Event::Closed:

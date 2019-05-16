@@ -27,9 +27,12 @@ assert (expression);\
  *
  */
 
-BarOBJ::BarOBJ()
+
+const float PI          = 3.141592653;   ///< Pi - pizdec
+
+BarOBJ::BarOBJ(sf::RenderWindow& window):
+window_(window)
 {
-    
 }
 
 BarOBJ::~BarOBJ()
@@ -43,7 +46,7 @@ int BarOBJ::update()
     return 0;
 }
 
-int BarOBJ::draw(sf::RenderWindow& window)
+int BarOBJ::draw()
 {
     return 0;
 }
@@ -60,9 +63,9 @@ int BarOBJ::get()
  */
 
 
-Button::Button()
+Button::Button(sf::RenderWindow& window): BarOBJ(window)
 {
-    
+    name_ = BUTTON;
 }
 
 Button::~Button()
@@ -77,6 +80,7 @@ int Button::update()
 
 int Button::draw(sf::RenderWindow& window)
 {
+    
     return 0;
 }
 
@@ -87,9 +91,9 @@ int Button::draw(sf::RenderWindow& window)
  */
 
 
-Slider::Slider()
+Slider::Slider(sf::RenderWindow& window): BarOBJ(window)
 {
-    
+    name_ = SLIDER;
 }
 
 Slider::~Slider()
@@ -181,7 +185,7 @@ int Bar::draw()
     window_.draw(rect);
     window_.popGLStates();
     for (int i = 0; i < capacity_ + 1; i++) {
-        data_ [i]->draw(window_);
+        data_ [i]->draw();
     }
     return 0;
 }

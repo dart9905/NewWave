@@ -23,6 +23,7 @@ const float GLOBsize2   = 4.f;    ///< size texture / 2
 const int window_width  = 2560;  ///< size window width
 const int window_height = 1800; ///< size window height
 
+const float GLOBsizeN    = 1.f;
 
 /*!
  \brief a skin type that stores textures on all faces of a cube
