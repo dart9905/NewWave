@@ -29,13 +29,16 @@ int EVENT (sf::RenderWindow& window, mouse_t& mouse, Bar& Bar, sf::View& view, i
     if (!exit && (mouse.dx_ == 0) && (mouse.dy_ == 0) && (mouse.dz_ == 0))
     {
         int time = 0;
-        while (!exit && time < 50)
+        if (*STEP != -1) {
+            time = 300;
+        }
+        while (!exit && time < 350)
         {
             time++;
             usleep(5000);
             //printf("sleep\n");
             exit = window.pollEvent(event);
-            if (time == 50) {
+            if (time == 350) {
                 (*STEP)++;
                 if ((*STEP) > 4) {
                     (*STEP) = 0;
